@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact | slon3studio</title>
+  <meta name="description" content="Contact slon3studio or start a new app project." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="icon" type="image/png" href="../assets/logo-256.png" />
+  <link rel="apple-touch-icon" href="../assets/logo-256.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo-256.png" alt="" width="38" height="38" />
+        slon3studio
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../index.html">Home</a>
+        <a href="../pages/projects.html">Apps</a>
+        <a href="../pages/about_us.html">About</a>
+        <a href="../pages/contact.html" aria-current="page">Contact</a>
+        <a class="nav-cta" href="../pages/contact.html#work">Work with us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>Let's talk</h1>
+        <p>Questions about an app, feedback, or a project of your own? Email <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a> or check out my <a href="https://github.com/ivopeterka1">GitHub</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="work reveal">
+          <div>
+            <span class="eyebrow">Work with us</span>
+            <h2>Have an app idea?</h2>
+            <p class="muted">We design and build apps for people and small businesses too. Tell us what you need and we'll get back to you.</p>
+            <ul>
+              <li>iPhone, iPad and Mac apps</li>
+              <li>Websites and landing pages</li>
+              <li>Games and interactive projects</li>
+            </ul>
+            <p>Prefer email? Write to us at<br /><a class="contact-chip" href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a></p>
+          </div>
+          <form class="form project-form">
+            <div class="row">
+              <label>Your name
+                <input name="name" type="text" required autocomplete="name" enterkeyhint="next" />
+              </label>
+              <label>Your email
+                <input name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" enterkeyhint="next" />
+              </label>
+            </div>
+            <div class="row">
+              <label>What do you need?
+                <select name="type">
+                  <option>iOS / Mac app</option>
+                  <option>Website</option>
+                  <option>Game</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+              <label>Budget (optional)
+                <select name="budget">
+                  <option value="">Not sure yet</option>
+                  <option>Under &euro;1,000</option>
+                  <option>&euro;1,000 to &euro;5,000</option>
+                  <option>Over &euro;5,000</option>
+                </select>
+              </label>
+            </div>
+            <label>Tell us about your project
+              <textarea name="message" required placeholder="What should the app do, and who is it for?"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send request &rarr;</button>
+            <p class="form-note">This opens your email app with your message ready to send.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>&copy; <span id="year">2026</span> slon3studio &middot; Made by Ivo Peterka</span>
+      <div class="footer-links">
+        <a href="../pages/projects.html">Apps</a>
+        <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a>
+        <a href="https://github.com/ivopeterka1">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

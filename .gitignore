@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# Urejevalniki
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code
+.claude/
+
+# Lokalni strežnik in začasne datoteke
+__pycache__/
+node_modules/
+*.log
