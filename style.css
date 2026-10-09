@@ -836,3 +836,61 @@ a.app-card:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Remote Mouse: download button and numbered setup steps */
+
+.download-row {
+  margin-top: 18px;
+}
+
+.download-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 20px;
+  max-width: 760px;
+  display: grid;
+  gap: 12px;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 16px 18px 16px 62px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: #d4d4d8;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  color: #111;
+  font-weight: 700;
+}
+
+.steps strong {
+  color: var(--text);
+}
+
+.steps code {
+  font-size: 0.9em;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--bg-soft);
+}

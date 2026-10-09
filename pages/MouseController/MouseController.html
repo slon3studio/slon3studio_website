@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Remote Mouse | slon3studio</title>
-  <meta name="description" content="Turn your iPhone into a wireless trackpad and keyboard for your Mac." />
+  <meta name="description" content="Turn your iPhone into a wireless trackpad and keyboard for your Mac. Download the free Mac companion app and connect in a minute." />
   <meta name="theme-color" content="#0b0b0d" />
   <link rel="icon" type="image/png" href="../../assets/logo-256.png" />
   <link rel="apple-touch-icon" href="../../assets/logo-256.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=2" />
+  <link rel="stylesheet" href="../../style.css?v=3" />
 </head>
 <body>
   <header class="site-header">
@@ -37,34 +37,63 @@
       <div>
         <span class="eyebrow">Mouse Controller</span>
         <h1>Remote Mouse</h1>
-        <p>Remote Mouse transforms your iPhone into a wireless trackpad and keyboard for your Mac.</p>
+        <p>Turn your iPhone into a wireless trackpad and keyboard for your Mac.</p>
+        <div class="btn-row download-row">
+          <a class="btn btn-primary" href="https://github.com/slon3studio/MouseController/releases/latest/download/MouseControllerMac.zip">Download for Mac</a>
+          <a class="btn btn-ghost" href="#setup">How to connect</a>
+        </div>
+        <p class="download-note">Free Mac companion app &middot; macOS 14.6 or later &middot; <a href="https://github.com/slon3studio/MouseController/releases/latest">All releases</a></p>
         <nav class="app-subnav"><a href="MouseController.html" aria-current="page">Overview</a><a href="SupportPage.html">Support</a><a href="PrivacyPolicy.html">Privacy Policy</a></nav>
       </div>
     </div>
 
     <section class="container">
       <div class="content-block reveal">
-        <h2>Control your Mac from your phone</h2>
-        <p>Control the cursor, click, scroll, and type directly from your phone using a fast local network connection.</p>
+        <h2>Your Mac, from across the room</h2>
+        <p>Remote Mouse lets you control your Mac from your iPhone over your local network. Use your phone as a trackpad from the couch, while you give a presentation, or when your Mac is connected to a TV, with no extra hardware.</p>
+        <p>It comes in two parts: the <strong>iPhone app</strong> you hold, with the trackpad, keyboard and media controls, and a small <strong>Mac companion app</strong> that runs in your menu bar and carries out the cursor, keyboard and volume actions. The two talk directly to each other over your Wi-Fi or Personal Hotspot. Nothing goes through the internet.</p>
       </div>
       <div class="content-block reveal">
         <h2>Features</h2>
         <ul class="feature-grid">
-          <li>Smooth cursor movement</li>
-          <li>Tap to click</li>
-          <li>Two-finger scrolling</li>
-          <li>Live keyboard typing</li>
-          <li>Fast local network connection</li>
-          <li>Minimal and clean interface</li>
+          <li>Smooth cursor with adjustable speed and acceleration</li>
+          <li>Tap to click, double-tap, two-finger tap to right-click</li>
+          <li>Hold and move to drag and drop</li>
+          <li>Two-finger scrolling with momentum, in both directions</li>
+          <li>Pinch to zoom and three-finger swipes for Mission Control and desktops</li>
+          <li>Type on your Mac, with Esc, Tab and arrow keys</li>
+          <li>One-tap copy, paste, undo, app switcher and Spotlight</li>
+          <li>Volume slider, mute, play/pause and track skipping</li>
+          <li>Finds your Mac automatically, no IP address needed</li>
+          <li>One-time pairing code and an encrypted connection</li>
+          <li>Reconnects by itself when Wi-Fi drops</li>
+        </ul>
+      </div>
+      <div class="content-block reveal" id="setup">
+        <h2>Connect your iPhone to your Mac</h2>
+        <ol class="steps">
+          <li><strong>Install the Mac app.</strong> <a href="https://github.com/slon3studio/MouseController/releases/latest/download/MouseControllerMac.zip">Download MouseControllerMac.zip</a>, unzip it, move <code>MouseControllerMac.app</code> to your Applications folder and open it. A cursor icon appears in the menu bar.</li>
+          <li><strong>Allow Accessibility.</strong> The first time, macOS asks for permission. Click <em>Open System Settings</em> and turn on <em>MouseControllerMac</em> under <em>Privacy &amp; Security &rarr; Accessibility</em>. Then quit the Mac app from its menu bar icon and open it again. Without this, your Mac ignores all input.</li>
+          <li><strong>Join the same network.</strong> Connect your iPhone and Mac to the same Wi-Fi, or connect the Mac to your iPhone's Personal Hotspot.</li>
+          <li><strong>Open the iPhone app</strong> (it shows as MouseController on your Home Screen) and tap <em>Allow</em> when it asks to find devices on your local network.</li>
+          <li><strong>Pick your Mac</strong> from the list under <em>Found nearby</em>.</li>
+          <li><strong>Enter the pairing code</strong> shown in the Mac app's window or its menu bar menu. You only do this once per Mac.</li>
+        </ol>
+        <p>That's it. Move a finger on the trackpad to move the cursor. The <em>Keys</em>, <em>Sound</em> and <em>Media</em> tabs open the keyboard, volume and music controls, and the settings button lists every gesture and lets you change the pointer speed.</p>
+        <p>Something not working? See <a href="SupportPage.html">Support</a> for fixes.</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Requirements</h2>
+        <ul class="feature-grid">
+          <li>iPhone with iOS 17.6 or later</li>
+          <li>Mac with macOS 14.6 or later</li>
+          <li>Both on the same Wi-Fi or Personal Hotspot</li>
+          <li>The newest version of both apps</li>
         </ul>
       </div>
       <div class="content-block reveal">
-        <h2>How it works</h2>
-        <p>Launch the Mac companion app, connect your iPhone to the same Wi-Fi or hotspot, enter your Mac IP address, and start controlling your Mac instantly.</p>
-      </div>
-      <div class="content-block reveal">
         <h2>Built with</h2>
-        <ul class="tags"><li>SwiftUI</li><li>Network Framework</li><li>CoreGraphics</li><li>GitHub Pages</li></ul>
+        <ul class="tags"><li>SwiftUI</li><li>Network framework</li><li>Bonjour</li><li>Core Graphics</li></ul>
       </div>
     </section>
   </main>

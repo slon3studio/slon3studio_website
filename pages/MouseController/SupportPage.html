@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=2" />
+  <link rel="stylesheet" href="../../style.css?v=3" />
 </head>
 <body>
   <header class="site-header">
@@ -44,21 +44,37 @@
     <section class="section" style="padding-top: 30px">
       <div class="container">
       <article class="doc">
-        <p>If you experience connection issues or have questions about the app, please contact support.</p>
+        <p>Need help connecting? Start with the <a href="MouseController.html#setup">setup steps</a>, then try the fixes below. If you're still stuck, email us.</p>
         <h2>Requirements</h2>
         <ul>
-          <li>iPhone and Mac must be connected to the same local network</li>
-          <li>The Mac companion app must be running</li>
-          <li>Accessibility permissions must be enabled on macOS</li>
+          <li>iPhone with iOS 17.6 or later and Mac with macOS 14.6 or later</li>
+          <li>Both devices on the same Wi-Fi network or Personal Hotspot</li>
+          <li>The Mac companion app running, with Accessibility allowed</li>
+          <li>The newest version of both apps. iPhone version 1.2 and later uses encrypted pairing and won't connect to older Mac apps.</li>
         </ul>
-        <h2>Common Fixes</h2>
+        <p><a class="btn btn-primary" href="https://github.com/slon3studio/MouseController/releases/latest/download/MouseControllerMac.zip">Download the Mac app</a></p>
+        <h2>My Mac doesn't appear in the list</h2>
         <ul>
-          <li>Restart the Mac companion app</li>
-          <li>Reconnect both devices to the same Wi-Fi or hotspot</li>
-          <li>Verify the correct IP address is entered</li>
-          <li>Allow Local Network access on iPhone</li>
+          <li>Make sure the Mac app is running: look for the cursor icon in the menu bar.</li>
+          <li>Check that both devices are on the same network. On a hotspot, make sure the Mac joined the hotspot of <em>this</em> iPhone.</li>
+          <li>On iPhone, turn on <em>Settings &rarr; Privacy &amp; Security &rarr; Local Network &rarr; MouseController</em>.</li>
+          <li>As a fallback, tap <em>Enter IP address manually</em> and type the IP address shown in the Mac app.</li>
+        </ul>
+        <h2>"That code didn't work"</h2>
+        <ul>
+          <li>Enter the code exactly as the Mac app shows it. The dash is optional.</li>
+          <li>After 5 wrong attempts the Mac waits 30 seconds before accepting a new try.</li>
+        </ul>
+        <h2>It connects, but the cursor doesn't move</h2>
+        <ul>
+          <li>Accessibility permission is missing or out of date, which often happens after installing a new version. In <em>System Settings &rarr; Privacy &amp; Security &rarr; Accessibility</em>, remove MouseControllerMac with <em>&minus;</em>, add it again, then restart the Mac app.</li>
+        </ul>
+        <h2>macOS says the app can't be opened</h2>
+        <ul>
+          <li>Download the app only from our <a href="https://github.com/slon3studio/MouseController/releases/latest">official releases</a>. If macOS still blocks it, open <em>System Settings &rarr; Privacy &amp; Security</em> and click <em>Open Anyway</em>.</li>
         </ul>
         <h2>Contact</h2>
+        <p>Found a bug or have an idea? We'd love to hear from you.</p>
         <p><a class="contact-chip" href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a></p>
       </article>
       </div>

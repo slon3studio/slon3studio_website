@@ -34,7 +34,7 @@ Vsebina strani je v angleščini.
 
 slon3studio je samostojni studio za razvoj aplikacij, ki ga vodi **Ivo
 Peterka**. Izdelujemo aplikacije za iPhone in Mac, predvsem s SwiftUI in
-Applovimi ogrodji, ter večplatformne aplikacije za iOS, Android in splet.
+Applovimi ogrodji, ter spletne aplikacije.
 
 - **Domače aplikacije:** narejene z Applovimi orodji, zato so hitre in se na napravi obnašajo, kot pričakuješ.
 - **Zasebnost na prvem mestu:** zbiramo samo, kar aplikacija res potrebuje.
@@ -72,8 +72,8 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
     </td>
     <td>
       <b><a href="https://slon3studio.github.io/slon3studio_website/pages/Rotera/Rotera.html">Rotera</a></b><br />
-      Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev.<br />
-      <sub>iOS · Android · splet</sub>
+      Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev. Aplikacija za iPhone, za Android pa <a href="https://rotera.slon3studio.si">spletna aplikacija</a>.<br />
+      <sub>iOS · spletna aplikacija</sub>
     </td>
   </tr>
   <tr>
