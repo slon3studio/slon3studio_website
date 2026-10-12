@@ -48,10 +48,10 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
 <table>
   <tr>
     <td width="96" align="center">
-      <img src="assets/RemoteMouseIcon-256.png" alt="Remote Mouse" width="72" height="72" />
+      <img src="assets/RemoteMouseIcon-256.png" alt="Mouse Controller" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/MouseController/MouseController.html">Remote Mouse</a></b><br />
+      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/MouseController/MouseController.html">Mouse Controller</a></b><br />
       iPhone spremeni v brezžično sledilno ploščico in tipkovnico za Mac.<br />
       <sub>iOS · macOS · SwiftUI</sub>
     </td>
