@@ -14,7 +14,7 @@
   &nbsp;·&nbsp;
   <a href="https://slon3studio.github.io/slon3studio_website/pages/projects.html">Aplikacije</a>
   &nbsp;·&nbsp;
-  <a href="https://slon3studio.github.io/slon3studio_website/pages/contact.html#work">Sodeluj z nami</a>
+  <a href="https://slon3studio.github.io/slon3studio_website/pages/contact.html#work">Naroči aplikacijo</a>
 </p>
 
 ---
@@ -26,7 +26,7 @@ To je uradna spletna stran studia slon3studio. Na njej:
 - predstavimo studio in vse naše aplikacije,
 - ima vsaka aplikacija svojo stran s pregledom, podporo (Support) in politiko
   zasebnosti (Privacy Policy),
-- lahko vsak prek obrazca »Work with us« pošlje idejo za novo aplikacijo.
+- lahko stranke prek obrazca »Start a project« pošljejo povpraševanje za izdelavo aplikacije.
 
 Vsebina strani je v angleščini.
 
