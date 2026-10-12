@@ -26,7 +26,7 @@ To je uradna spletna stran studia slon3studio. Na njej:
 - predstavimo studio in vse naše aplikacije,
 - ima vsaka aplikacija svojo stran s pregledom, podporo (Support) in politiko
   zasebnosti (Privacy Policy),
-- lahko stranke prek obrazca »Start a project« pošljejo povpraševanje za izdelavo aplikacije.
+- lahko stranke prek obrazca »Get your app built« pošljejo povpraševanje za izdelavo aplikacije.
 
 Vsebina strani je v angleščini.
 

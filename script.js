@@ -49,7 +49,7 @@ if ("IntersectionObserver" in window) {
   revealed.forEach((el) => el.classList.add("visible"));
 }
 
-// Project request form ("Start a project"): opens the visitor's email app with the message filled in
+// Project request form ("Get your app built"): opens the visitor's email app with the message filled in
 document.querySelectorAll("form.project-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
