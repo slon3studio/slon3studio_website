@@ -32,8 +32,7 @@ Vsebina strani je v angleščini.
 
 ## O studiu
 
-slon3studio je samostojni studio za razvoj aplikacij, ki ga vodi **Ivo
-Peterka**. Izdelujemo aplikacije za iPhone in Mac, predvsem s SwiftUI in
+slon3studio je samostojni studio za razvoj aplikacij iz Slovenije. Izdelujemo aplikacije za iPhone in Mac, predvsem s SwiftUI in
 Applovimi ogrodji, ter spletne aplikacije.
 
 - **Domače aplikacije:** narejene z Applovimi orodji, zato so hitre in se na napravi obnašajo, kot pričakuješ.
