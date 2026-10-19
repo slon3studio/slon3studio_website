@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=4" />
+  <link rel="stylesheet" href="../../style.css?v=5" />
 </head>
 <body>
   <header class="site-header">
@@ -37,9 +37,9 @@
       <div>
         <span class="eyebrow">App</span>
         <h1>PayDay</h1>
-        <p>Log your shifts, track tips and always know what this month's paycheck will be.</p>
+        <p>A shift and pay tracker for people who work more than one job. Log your shifts and tips, and always know what this month will pay.</p>
         <div class="app-actions">
-          <span class="store-badge is-soon" aria-label="Coming soon to the App Store"><svg class="store-logo" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Coming soon to the</small>App Store</span></span>
+          <a class="store-badge" href="https://apps.apple.com/us/app/payday-shift-tracker/id6819828248"><svg class="store-logo" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small>App Store</span></a>
         </div>
         <nav class="app-subnav"><a href="PayDay.html" aria-current="page">Overview</a><a href="SupportPage.html">Support</a><a href="PrivacyPolicy.html">Privacy Policy</a></nav>
       </div>
@@ -48,30 +48,44 @@
     <section class="container">
       <div class="content-block reveal">
         <h2>Know your pay before payday</h2>
-        <p>PayDay is a simple shift and pay tracker for iPhone. Add each job you work with its hourly rate, log your shifts, and PayDay works out your hours, earnings and tips, then projects what the whole month will pay.</p>
+        <p>Most hour trackers assume one employer and a fixed salary. PayDay assumes the opposite: a bar on weekends, a studio on Tuesdays, deliveries when they come up, each with its own rate, hours and tips. It answers three questions. What have I worked this month? What will the month pay me? And did the payslip actually match?</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Screenshots</h2>
+        <ul class="shots">
+          <li><img src="../../assets/promo/PayDay/1.jpg" alt="Every job, its own tab" loading="lazy" width="603" height="1311" /></li>
+          <li><img src="../../assets/promo/PayDay/2.jpg" alt="See the month before it ends" loading="lazy" width="603" height="1311" /></li>
+          <li><img src="../../assets/promo/PayDay/3.jpg" alt="Check the payslip" loading="lazy" width="603" height="1311" /></li>
+          <li><img src="../../assets/promo/PayDay/4.jpg" alt="A timesheet you can send" loading="lazy" width="603" height="1311" /></li>
+          <li><img src="../../assets/promo/PayDay/5.jpg" alt="Log a shift in seconds" loading="lazy" width="603" height="1311" /></li>
+        </ul>
       </div>
       <div class="content-block reveal">
         <h2>Features</h2>
         <ul class="feature-grid">
-          <li>Log a shift in seconds</li>
-          <li>Repeat your last shift with one tap</li>
-          <li>As many jobs as you like, each with its own rate</li>
-          <li>Tip tracking for waiting and bar jobs</li>
-          <li>Projected pay for the current month</li>
-          <li>Monthly goals in hours or money</li>
-          <li>Calendar heatmap of the days you worked</li>
-          <li>Mark months paid and spot differences</li>
-          <li>Export timesheets as CSV or PDF</li>
-          <li>Sync across your devices with iCloud</li>
+          <li>A tab for every job, with its own rate, colour and icon</li>
+          <li>Log a shift in seconds, or repeat your last one with a tap</li>
+          <li>Plan shifts ahead from your rota, with a reminder to confirm them</li>
+          <li>Warns you when two jobs are booked at the same time</li>
+          <li>Unpaid breaks and shifts that run past midnight</li>
+          <li>Tips, only for the jobs that have them</li>
+          <li>Projected pay for the month, weighted by the days you really work</li>
+          <li>Monthly goals in hours or money, and a yearly total with an optional limit</li>
+          <li>Check your payslip: enter what was paid and see any difference</li>
+          <li>Rate rise? Choose whether it applies to shifts already logged</li>
+          <li>Timesheets with base pay and tips, exported as PDF or CSV</li>
+          <li>Week strip and month calendar of the days you worked</li>
+          <li>Any currency, light and dark themes</li>
+          <li>Sync across your devices with iCloud, or keep it all on the phone</li>
         </ul>
       </div>
       <div class="content-block reveal">
         <h2>How it works</h2>
-        <p>Add a job with its hourly rate and usual hours, then log each shift as you work it. Missed one? Add it for any past date, or repeat your last shift with a tap. PayDay keeps the totals, averages and month projection up to date as you go.</p>
+        <p>A short tour shows you around, then you add your first job with its hourly rate and usual hours. Log each shift as you work it, or enter your rota in advance as planned shifts and PayDay will ask after each one whether you worked it. The month projection fills the remaining days at your average, counted as weekdays, every day, or weighted by how often you actually work each weekday. When the money arrives, mark the month as paid and PayDay tells you whether it matched what your shifts came to.</p>
       </div>
       <div class="content-block reveal">
         <h2>Built with</h2>
-        <ul class="tags"><li>SwiftUI</li><li>SwiftData</li><li>CloudKit</li><li>Swift Charts</li></ul>
+        <ul class="tags"><li>SwiftUI</li><li>SwiftData</li><li>CloudKit</li><li>Swift Charts</li><li>User Notifications</li></ul>
       </div>
     </section>
   </main>

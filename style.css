@@ -537,6 +537,43 @@ a.app-card:hover {
   max-width: 720px;
 }
 
+/* App screenshots: a strip that scrolls sideways on phones and fits on wide screens */
+
+.shots {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 0;
+  padding: 4px 0 14px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.shots li {
+  flex: 0 0 calc((100% - 64px) / 5);
+  min-width: 170px;
+  scroll-snap-align: start;
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1206 / 2622;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+@media (max-width: 720px) {
+  .shots li {
+    flex-basis: 62%;
+    min-width: 0;
+  }
+}
+
 /* Document pages (support, privacy) */
 
 .doc {
