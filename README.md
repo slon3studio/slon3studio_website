@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://slon3studio.github.io/slon3studio_website/"><b>Obišči spletno stran</b></a>
+  <a href="https://slon3studio.si/"><b>Obišči spletno stran</b></a>
   &nbsp;·&nbsp;
-  <a href="https://slon3studio.github.io/slon3studio_website/pages/projects.html">Aplikacije</a>
+  <a href="https://slon3studio.si/pages/projects.html">Aplikacije</a>
   &nbsp;·&nbsp;
-  <a href="https://slon3studio.github.io/slon3studio_website/pages/contact.html#work">Naroči aplikacijo</a>
+  <a href="https://slon3studio.si/pages/contact.html#work">Naroči aplikacijo</a>
 </p>
 
 ---
@@ -50,7 +50,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RemoteMouseIcon-256.png" alt="Mouse Controller" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/MouseController/MouseController.html">Mouse Controller</a></b><br />
+      <b><a href="https://slon3studio.si/pages/MouseController/MouseController.html">Mouse Controller</a></b> · <a href="https://apps.apple.com/si/app/mousecontroller/id6766896246">App Store</a><br />
       iPhone spremeni v brezžično sledilno ploščico in tipkovnico za Mac.<br />
       <sub>iOS · macOS · SwiftUI</sub>
     </td>
@@ -60,7 +60,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/PayDayIcon-256.png" alt="PayDay" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/PayDay/PayDay.html">PayDay</a></b><br />
+      <b><a href="https://slon3studio.si/pages/PayDay/PayDay.html">PayDay</a></b> · <a href="https://apps.apple.com/us/app/payday-shift-tracker/id6819828248">App Store</a><br />
       Beleži izmene, napitnine in plačo pri več službah ter pokaže, koliko bo izplačilo ta mesec.<br />
       <sub>iOS · SwiftUI · iCloud</sub>
     </td>
@@ -70,7 +70,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RoteraIcon-256.png" alt="Rotera" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/Rotera/Rotera.html">Rotera</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Rotera/Rotera.html">Rotera</a></b><br />
       Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev. Aplikacija za iPhone, za Android pa <a href="https://rotera.slon3studio.si">spletna aplikacija</a>.<br />
       <sub>iOS · spletna aplikacija</sub>
     </td>
@@ -80,9 +80,19 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/SlippyIcon-256.png" alt="Slippy" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.github.io/slon3studio_website/pages/Slippy/Slippy.html">Slippy</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Slippy/Slippy.html">Slippy</a></b><br />
       Kalkulator za natakarje in blagajnike: s kamero prebere znesek na kartičnih slipih in jih ob koncu izmene sešteje.<br />
       <sub>iOS · SwiftUI · Vision</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="96" align="center">
+      <img src="assets/TackaIcon-256.png" alt="Tačka" width="72" height="72" />
+    </td>
+    <td>
+      <b><a href="https://slon3studio.si/pages/Tacka/Tacka.html">Tačka</a></b><br />
+      Poišči zaupanja vrednega sprehajalca psov ali varuha v bližini in spremljaj vsak sprehod v živo na zemljevidu.<br />
+      <sub>iOS · SwiftUI · MapKit</sub>
     </td>
   </tr>
 </table>
@@ -91,9 +101,8 @@ Nove aplikacije so že v delu.
 
 ## Dostop
 
-- **Spletna stran:** <https://slon3studio.github.io/slon3studio_website/>
-  (kmalu tudi na **slon3studio.si**)
-- **Lokalno:** odpri `index.html` v brskalniku, namestitev ni potrebna.
+- **Spletna stran:** <https://slon3studio.si/>
+- **Lokalno:** v mapi zaženi `python3 -m http.server` in odpri <http://localhost:8000>. Povezave Home kažejo na mapo (`./`), zato jih strežnik odpre kot `index.html`.
 
 ## Kontakt
 

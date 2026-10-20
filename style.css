@@ -870,6 +870,39 @@ body.no-scroll {
   border-radius: 40px;
 }
 
+.tap-hint {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  font-family: var(--pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: hint-bob 1.6s ease-in-out infinite;
+  transition: opacity 0.4s;
+}
+
+.tap-hint::before {
+  content: "\261D\FE0F ";
+}
+
+.hero-art.tapped .tap-hint {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes hint-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -6px); }
+}
+
 .hero-art.boop img {
   animation: boop 0.5s ease;
 }
@@ -933,7 +966,8 @@ body.no-scroll {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-art.boop img,
-  .lightbox-stage img {
+  .lightbox-stage img,
+  .tap-hint {
     animation: none;
   }
 

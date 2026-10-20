@@ -269,6 +269,8 @@ if (heroArt) {
   heroArt.tabIndex = 0;
   heroArt.setAttribute("role", "button");
   heroArt.setAttribute("aria-label", "Say hi to the slon3studio elephant");
+  const hint = heroArt.querySelector(".tap-hint");
+  if (hint && window.matchMedia("(hover: hover)").matches) hint.textContent = "Click me!";
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -288,6 +290,7 @@ if (heroArt) {
 
   const boop = () => {
     taps++;
+    heroArt.classList.add("tapped");
     heroArt.classList.remove("boop");
     void heroArt.offsetWidth;
     heroArt.classList.add("boop");
