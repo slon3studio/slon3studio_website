@@ -50,7 +50,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RemoteMouseIcon-256.png" alt="Mouse Controller" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/MouseController/MouseController.html">Mouse Controller</a></b> · <a href="https://apps.apple.com/si/app/mousecontroller/id6766896246">App Store</a><br />
+      <b><a href="https://slon3studio.si/pages/MouseController/MouseController.html">Mouse Controller</a></b> · <a href="https://apps.apple.com/app/id6766896246">App Store</a><br />
       iPhone spremeni v brezžično sledilno ploščico in tipkovnico za Mac.<br />
       <sub>iOS · macOS · SwiftUI</sub>
     </td>
@@ -60,7 +60,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/PayDayIcon-256.png" alt="PayDay" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/PayDay/PayDay.html">PayDay</a></b> · <a href="https://apps.apple.com/us/app/payday-shift-tracker/id6819828248">App Store</a><br />
+      <b><a href="https://slon3studio.si/pages/PayDay/PayDay.html">PayDay</a></b> · <a href="https://apps.apple.com/app/id6819828248">App Store</a><br />
       Beleži izmene, napitnine in plačo pri več službah ter pokaže, koliko bo izplačilo ta mesec.<br />
       <sub>iOS · SwiftUI · iCloud</sub>
     </td>
