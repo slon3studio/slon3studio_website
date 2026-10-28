@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=8" />
+  <link rel="stylesheet" href="../../style.css?v=9" />
 </head>
 <body>
   <header class="site-header">
@@ -137,10 +137,28 @@
       var link = document.querySelector('.app-actions a[href$="MouseControllerMac.zip"]');
       if (!new URLSearchParams(location.search).has('download') || !isMac || !link) return;
 
-      var note = document.createElement('p');
-      note.className = 'muted';
-      note.textContent = 'Your download has started. Unzip it, move MouseControllerMac to Applications and open it.';
-      link.parentNode.insertAdjacentElement('afterend', note);
+      // Drop ?download from the address so a reload doesn't download again.
+      history.replaceState(null, '', location.pathname + location.hash);
+
+      var card = document.createElement('div');
+      card.className = 'download-card';
+      card.setAttribute('role', 'status');
+      card.innerHTML =
+        '<span class="download-card-icon" aria-hidden="true">' +
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>' +
+        '</span>' +
+        '<div>' +
+          '<strong>Your download has started</strong>' +
+          '<p>Didn\'t start? <a href="' + link.href + '">Download again</a></p>' +
+          '<ol>' +
+            '<li>Open <b>MouseControllerMac.zip</b> in Downloads</li>' +
+            '<li>Move <b>MouseControllerMac</b> to Applications</li>' +
+            '<li>Open it and allow Accessibility when asked</li>' +
+          '</ol>' +
+        '</div>' +
+        '<button class="download-card-close" type="button" aria-label="Close">&times;</button>';
+      card.querySelector('button').addEventListener('click', function () { card.remove(); });
+      link.parentNode.insertAdjacentElement('afterend', card);
 
       setTimeout(function () { location.href = link.href; }, 500);
     })();
