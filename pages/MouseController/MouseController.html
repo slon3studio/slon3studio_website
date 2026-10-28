@@ -129,5 +129,21 @@
   </footer>
 
   <script src="../../script.js?v=4"></script>
+  <script>
+    // The iPhone app shares this page with ?download: on a Mac, start the
+    // download right away. iPads also say "Macintosh" but have touch points.
+    (function () {
+      var isMac = /Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints === 0;
+      var link = document.querySelector('.app-actions a[href$="MouseControllerMac.zip"]');
+      if (!new URLSearchParams(location.search).has('download') || !isMac || !link) return;
+
+      var note = document.createElement('p');
+      note.className = 'muted';
+      note.textContent = 'Your download has started. Unzip it, move MouseControllerMac to Applications and open it.';
+      link.parentNode.insertAdjacentElement('afterend', note);
+
+      setTimeout(function () { location.href = link.href; }, 500);
+    })();
+  </script>
 </body>
 </html>
