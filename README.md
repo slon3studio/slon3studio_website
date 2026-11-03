@@ -50,7 +50,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RemoteMouseIcon-256.png" alt="Mouse Controller" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/MouseController/MouseController">Mouse Controller</a></b> · <a href="https://apps.apple.com/app/id6766896246">App Store</a><br />
+      <b><a href="https://slon3studio.si/pages/MouseController/">Mouse Controller</a></b> · <a href="https://apps.apple.com/app/id6766896246">App Store</a><br />
       iPhone spremeni v brezžično sledilno ploščico in tipkovnico za Mac.<br />
       <sub>iOS · macOS · SwiftUI</sub>
     </td>
@@ -60,7 +60,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/PayDayIcon-256.png" alt="PayDay" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/PayDay/PayDay">PayDay</a></b> · <a href="https://apps.apple.com/app/id6819828248">App Store</a><br />
+      <b><a href="https://slon3studio.si/pages/PayDay/">PayDay</a></b> · <a href="https://apps.apple.com/app/id6819828248">App Store</a><br />
       Beleži izmene, napitnine in plačo pri več službah ter pokaže, koliko bo izplačilo ta mesec.<br />
       <sub>iOS · SwiftUI · iCloud</sub>
     </td>
@@ -70,7 +70,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RoteraIcon-256.png" alt="Rotera" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Rotera/Rotera">Rotera</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Rotera/">Rotera</a></b><br />
       Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev. Aplikacija za iPhone, za Android pa <a href="https://rotera.slon3studio.si">spletna aplikacija</a>.<br />
       <sub>iOS · spletna aplikacija</sub>
     </td>
@@ -80,7 +80,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/SlippyIcon-256.png" alt="Slippy" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Slippy/Slippy">Slippy</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Slippy/">Slippy</a></b><br />
       Kalkulator za natakarje in blagajnike: s kamero prebere znesek na kartičnih slipih in jih ob koncu izmene sešteje.<br />
       <sub>iOS · SwiftUI · Vision</sub>
     </td>
@@ -90,7 +90,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/TackaIcon-256.png" alt="Tačka" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Tacka/Tacka">Tačka</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Tacka/">Tačka</a></b><br />
       Poišči zaupanja vrednega sprehajalca psov ali varuha v bližini in spremljaj vsak sprehod v živo na zemljevidu.<br />
       <sub>iOS · SwiftUI · MapKit</sub>
     </td>

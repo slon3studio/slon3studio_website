@@ -14,8 +14,11 @@ if (location.protocol === "file:" || /^(localhost|127\.0\.0\.1)$/.test(location.
     const href = a.getAttribute("href");
     if (/^[a-z]+:|^#|^\/\//i.test(href)) return;
     const [path, hash] = href.split("#");
-    if (!path || path.endsWith("/") || /\.[a-z0-9]+$/i.test(path)) return;
-    a.setAttribute("href", path + ".html" + (hash !== undefined ? "#" + hash : ""));
+    if (!path || /\.[a-z0-9]+$/i.test(path)) return;
+    // A local server opens a folder's index.html itself, a plain file does not
+    if (path.endsWith("/") && location.protocol !== "file:") return;
+    const file = path.endsWith("/") ? path + "index.html" : path + ".html";
+    a.setAttribute("href", file + (hash !== undefined ? "#" + hash : ""));
   });
 }
 
