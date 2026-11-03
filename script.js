@@ -7,6 +7,18 @@ document.querySelectorAll("#year").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+// Links have no .html (GitHub Pages adds it). A local preview server or a
+// double-clicked file does not, so put it back there.
+if (location.protocol === "file:" || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  document.querySelectorAll("a[href]").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (/^[a-z]+:|^#|^\/\//i.test(href)) return;
+    const [path, hash] = href.split("#");
+    if (!path || path.endsWith("/") || /\.[a-z0-9]+$/i.test(path)) return;
+    a.setAttribute("href", path + ".html" + (hash !== undefined ? "#" + hash : ""));
+  });
+}
+
 // Mobile menu
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
