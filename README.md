@@ -90,7 +90,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/TackaIcon-256.png" alt="Tačka" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Tacka/">Tačka</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Tacka/">Tačka</a></b> · <a href="https://apps.apple.com/app/id6823619182">App Store</a><br />
       Poišči zaupanja vrednega sprehajalca psov ali varuha v bližini in spremljaj vsak sprehod v živo na zemljevidu.<br />
       <sub>iOS · SwiftUI · MapKit</sub>
     </td>
