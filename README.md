@@ -80,7 +80,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/SlippyIcon-256.png" alt="Slippy" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Slippy/">Slippy</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Slippy/">Slippy</a></b> · <a href="https://apps.apple.com/app/id6821976978">App Store</a><br />
       Kalkulator za natakarje in blagajnike: s kamero prebere znesek na kartičnih slipih in jih ob koncu izmene sešteje.<br />
       <sub>iOS · SwiftUI · Vision</sub>
     </td>
