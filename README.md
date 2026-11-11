@@ -70,7 +70,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RoteraIcon-256.png" alt="Rotera" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/pages/Rotera/">Rotera</a></b><br />
+      <b><a href="https://slon3studio.si/pages/Rotera/">Rotera</a></b> · <a href="https://apps.apple.com/app/id6821974105">App Store</a><br />
       Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev. Aplikacija za iPhone, za Android pa <a href="https://rotera.slon3studio.si">spletna aplikacija</a>.<br />
       <sub>iOS · spletna aplikacija</sub>
     </td>
