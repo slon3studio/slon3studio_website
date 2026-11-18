@@ -2047,3 +2047,99 @@ button[aria-busy="true"] {
     padding: 10px 14px;
   }
 }
+
+/* ---------- Services v2: package details, FAQ, quote steps ---------- */
+
+.packages {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: start;
+}
+
+.packages-care {
+  margin-top: 18px;
+  grid-template-columns: 1fr;
+}
+
+.package.is-care {
+  border-style: dashed;
+  border-color: var(--border-strong);
+}
+
+.package-best {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+}
+
+.package-best strong {
+  color: var(--text);
+}
+
+.package h4 {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.package .post-points {
+  flex: none;
+  margin-bottom: 4px;
+}
+
+.package-facts {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 8px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.package-facts dt {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.package-facts dd {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.faq {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-item {
+  padding: 16px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.faq-item p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.quote-steps {
+  margin: 0 0 18px;
+  padding-left: 1.3em;
+  color: #d4d4d8;
+}
+
+.quote-steps li {
+  margin: 6px 0;
+}
+
+.quote-steps li::marker {
+  color: var(--yellow);
+  font-weight: 700;
+}

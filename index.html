@@ -15,6 +15,9 @@
   <link rel="alternate" hreflang="en" href="https://slon3studio.si/" />
   <link rel="alternate" hreflang="sl" href="https://slon3studio.si/sl/" />
   <link rel="alternate" hreflang="x-default" href="https://slon3studio.si/" />
+  <link rel="alternate" hreflang="en" href="https://slon3studio.si/" />
+  <link rel="alternate" hreflang="sl" href="https://slon3studio.si/sl/" />
+  <link rel="alternate" hreflang="x-default" href="https://slon3studio.si/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="slon3studio" />
   <meta property="og:title" content="slon3studio | App studio" />
@@ -29,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
   <header class="site-header">
@@ -325,20 +328,72 @@
       </div>
     </section>
 
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">News</span>
+          <h2>Fresh from the studio</h2>
+          <p><a href="pages/news">All news &rarr;</a></p>
+        </div>
+        <div class="app-grid">
+          <a class="app-card news-card" href="pages/news#rotera-1-3">
+            <div class="post-head">
+              <img class="post-icon" src="assets/RoteraIcon-256.png" alt="" width="44" height="44" loading="lazy" />
+              <div><span class="post-app">Rotera</span><time datetime="2026-11-13">13 Nov 2026</time></div>
+            </div>
+            <h3>Rotera 1.2 and 1.3: wishes that say what people mean, and a calmer schedule</h3>
+            <span class="card-link">Read more &rarr;</span>
+          </a>
+          <a class="app-card news-card" href="pages/news#rotera-launch">
+            <div class="post-head">
+              <img class="post-icon" src="assets/RoteraIcon-256.png" alt="" width="44" height="44" loading="lazy" />
+              <div><span class="post-app">Rotera</span><time datetime="2026-11-11">11 Nov 2026</time></div>
+            </div>
+            <h3>Rotera is on the App Store</h3>
+            <span class="card-link">Read more &rarr;</span>
+          </a>
+          <a class="app-card news-card" href="pages/news#slippy-launch">
+            <div class="post-head">
+              <img class="post-icon" src="assets/SlippyIcon-256.png" alt="" width="44" height="44" loading="lazy" />
+              <div><span class="post-app">Slippy</span><time datetime="2026-11-08">8 Nov 2026</time></div>
+            </div>
+            <h3>Meet Slippy, the end-of-shift calculator</h3>
+            <span class="card-link">Read more &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="newsletter">
+      <div class="container">
+        <div class="newsletter reveal">
+          <div>
+            <span class="eyebrow">Newsletter</span>
+            <h2>New apps and updates, by email</h2>
+            <p class="muted">A short email when we release a new app or a big update. We only use your address for this, and you can ask us to remove it at any time.</p>
+          </div>
+          <form class="newsletter-form">
+            <label class="sr-only" for="newsletter-email">Your email</label>
+            <div class="newsletter-row">
+              <input id="newsletter-email" name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" />
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <label class="hp" aria-hidden="true">Leave this empty <input name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></label>
+            <p class="form-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="work">
       <div class="container">
         <div class="work reveal">
           <div>
             <span class="eyebrow">Apps and websites for clients</span>
-            <h2>Need an app or a website? Get a quote.</h2>
-            <p class="muted">Have an idea for your business or yourself? We design, build and publish the app for you, from the first sketch to the App Store. Pick a package or just describe your idea, and we'll reply with next steps and a quote.</p>
-            <ul>
-              <li>iPhone, iPad and Mac apps</li>
-              <li>Websites and landing pages</li>
-              <li>Games and interactive projects</li>
-            </ul>
-            <p><a href="pages/services">See packages and prices &rarr;</a></p>
-            <p><a href="pages/services">See packages and prices &rarr;</a></p>
+            <h2>Need a website or an app? Get a quote.</h2>
+            <p class="muted">Pick a package if you already know what fits, or choose “Not sure yet” and just describe your idea. The quote is free and there is no obligation.</p>
+            <ol class="quote-steps"><li><strong>Send the request.</strong> Tell us what you need. A short description is enough.</li><li><strong>We reply by email.</strong> With a few questions and a first estimate.</li><li><strong>You get a written quote.</strong> A fixed price and timeline before any work starts.</li></ol>
+            <p><a href="pages/services">Compare packages and prices &rarr;</a></p>
             <p>Prefer email? Write to us at<br /><a class="contact-chip" href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a></p>
           </div>
           <form class="form project-form">
@@ -350,51 +405,58 @@
                 <input name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" enterkeyhint="next" />
               </label>
             </div>
+            <label>What do you need?
+              <select name="package">
+                  <option value="">Not sure yet, help me choose</option>
+                  <option value="landing">Landing page (from &euro;490)</option>
+                  <option value="website">Business website (from &euro;990)</option>
+                  <option value="app">iPhone app (from &euro;2,900)</option>
+                  <option value="custom">Custom app</option>
+                  <option value="care">Care plan for an existing site or app</option>
+                  <option value="other">Something else</option>
+              </select>
+            </label>
             <div class="row">
-              <label>What do you need?
-                <select name="type">
-                  <option>iOS / Mac app</option>
-                  <option>Website</option>
-                  <option>Game</option>
-                  <option>Something else</option>
-                </select>
-              </label>
               <label>Budget (optional)
                 <select name="budget">
                   <option value="">Not sure yet</option>
                   <option>Under &euro;1,000</option>
-                  <option>&euro;1,000 to &euro;5,000</option>
-                  <option>Over &euro;5,000</option>
+                  <option>&euro;1,000 to &euro;3,000</option>
+                  <option>&euro;3,000 to &euro;6,000</option>
+                  <option>Over &euro;6,000</option>
+                </select>
+              </label>
+              <label>When do you need it?
+                <select name="timeline">
+                  <option>No fixed date</option>
+                  <option>Within a month</option>
+                  <option>Within 3 months</option>
+                  <option>Later this year</option>
                 </select>
               </label>
             </div>
+            <label>Business or website (optional)
+              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" />
+            </label>
             <fieldset class="picker">
-              <legend>What should it have? <span class="picker-hint">Tap all that apply</span></legend>
+              <legend>What should it have? <span class="picker-hint">Tap all that apply, it's fine to skip</span></legend>
               <div class="pick-chips">
+                <button type="button" class="pick-chip" aria-pressed="false">Contact form</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Online booking</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Two languages</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Photo gallery</button>
+                <button type="button" class="pick-chip" aria-pressed="false">News or blog</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Sign-in &amp; accounts</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Payments</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Maps &amp; location</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Camera &amp; scanning</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Notifications</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Camera &amp; scanning</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Admin view</button>
                 <button type="button" class="pick-chip" aria-pressed="false">iCloud sync</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Charts &amp; stats</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Chat</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Admin dashboard</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Multiple languages</button>
               </div>
             </fieldset>
-            <label>Package (optional)
-              <select name="package">
-                <option value="">Not sure yet</option>
-                <option value="landing">Landing page</option>
-                <option value="website">Business website</option>
-                <option value="app">iPhone app</option>
-                <option value="custom">Custom app</option>
-                <option value="care">Care plan</option>
-              </select>
-            </label>
             <label>Tell us about your project
-              <textarea name="message" required placeholder="What should the app do, and who is it for?"></textarea>
+              <textarea name="message" required placeholder="What does your business do, who is it for, and what should the website or app help with? Links to sites or apps you like help too."></textarea>
             </label>
             <label class="hp" aria-hidden="true">Leave this empty <input name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></label>
             <button class="btn btn-primary" type="submit">Ask for a quote &rarr;</button>
@@ -418,6 +480,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>

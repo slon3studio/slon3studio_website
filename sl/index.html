@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=13" />
+  <link rel="stylesheet" href="../style.css?v=14" />
 </head>
 <body>
   <header class="site-header">
@@ -211,14 +211,10 @@
         <div class="work reveal">
           <div>
             <span class="eyebrow">Aplikacije in spletne strani po naročilu</span>
-            <h2>Potrebuješ aplikacijo ali spletno stran? Pridobi ponudbo.</h2>
-            <p class="muted">Imaš idejo za svoje podjetje ali zase? Aplikacijo oblikujemo, izdelamo in objavimo zate, od prve skice do App Stora. Izberi paket ali preprosto opiši svojo idejo in odgovorimo ti z naslednjimi koraki in ponudbo.</p>
-            <ul>
-              <li>Aplikacije za iPhone, iPad in Mac</li>
-              <li>Spletne strani in predstavitvene strani</li>
-              <li>Igre in interaktivni projekti</li>
-            </ul>
-            <p><a href="pages/services">Oglej si pakete in cene &rarr;</a></p>
+            <h2>Potrebuješ spletno stran ali aplikacijo? Pridobi ponudbo.</h2>
+            <p class="muted">Izberi paket, če že veš, kaj ti ustreza, ali izberi »Še ne vem« in preprosto opiši svojo idejo. Ponudba je brezplačna in te ne zavezuje.</p>
+            <ol class="quote-steps"><li><strong>Pošlji povpraševanje.</strong> Povej, kaj potrebuješ. Dovolj je kratek opis.</li><li><strong>Odgovorimo po e-pošti.</strong> Z nekaj vprašanji in prvo oceno.</li><li><strong>Dobiš pisno ponudbo.</strong> Fiksno ceno in rok, preden začnemo.</li></ol>
+            <p><a href="pages/services">Primerjaj pakete in cene &rarr;</a></p>
             <p>Raje po e-pošti? Piši nam na<br /><a class="contact-chip" href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a></p>
           </div>
           <form class="form project-form">
@@ -230,54 +226,61 @@
                 <input name="email" type="email" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" enterkeyhint="next" />
               </label>
             </div>
+            <label>Kaj potrebuješ?
+              <select name="package">
+                  <option value="">Še ne vem, pomagajte mi izbrati</option>
+                  <option value="landing">Predstavitvena stran (od 490 &euro;)</option>
+                  <option value="website">Spletna stran za podjetje (od 990 &euro;)</option>
+                  <option value="app">Aplikacija za iPhone (od 2.900 &euro;)</option>
+                  <option value="custom">Aplikacija po meri</option>
+                  <option value="care">Vzdrževanje obstoječe strani ali aplikacije</option>
+                  <option value="other">Nekaj drugega</option>
+              </select>
+            </label>
             <div class="row">
-              <label>Kaj potrebuješ?
-                <select name="type">
-                  <option>Aplikacija za iOS / Mac</option>
-                  <option>Spletna stran</option>
-                  <option>Igra</option>
-                  <option>Nekaj drugega</option>
-                </select>
-              </label>
               <label>Proračun (neobvezno)
                 <select name="budget">
                   <option value="">Še ne vem</option>
                   <option>Manj kot 1.000 &euro;</option>
-                  <option>1.000 &euro; do 5.000 &euro;</option>
-                  <option>Več kot 5.000 &euro;</option>
+                  <option>1.000 &euro; do 3.000 &euro;</option>
+                  <option>3.000 &euro; do 6.000 &euro;</option>
+                  <option>Več kot 6.000 &euro;</option>
+                </select>
+              </label>
+              <label>Do kdaj jo potrebuješ?
+                <select name="timeline">
+                  <option>Ni določenega roka</option>
+                  <option>V enem mesecu</option>
+                  <option>V treh mesecih</option>
+                  <option>Do konca leta</option>
                 </select>
               </label>
             </div>
+            <label>Podjetje ali spletna stran (neobvezno)
+              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" />
+            </label>
             <fieldset class="picker">
-              <legend>Kaj naj vsebuje? <span class="picker-hint">Izberi vse, kar velja</span></legend>
+              <legend>Kaj naj vsebuje? <span class="picker-hint">Izberi vse, kar velja, lahko tudi preskočiš</span></legend>
               <div class="pick-chips">
+                <button type="button" class="pick-chip" aria-pressed="false">Kontaktni obrazec</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Spletne rezervacije</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Dva jezika</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Galerija fotografij</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Novice ali blog</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Prijava in računi</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Plačila</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Zemljevidi in lokacija</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Kamera in skeniranje</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Obvestila</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Kamera in skeniranje</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Skrbniški pogled</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Sinhronizacija iCloud</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Grafi in statistika</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Klepet</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Skrbniška plošča</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Več jezikov</button>
               </div>
             </fieldset>
-            <label>Paket (neobvezno)
-              <select name="package">
-                <option value="">Še ne vem</option>
-                <option value="landing">Predstavitvena stran</option>
-                <option value="website">Spletna stran za podjetje</option>
-                <option value="app">Aplikacija za iPhone</option>
-                <option value="custom">Aplikacija po meri</option>
-                <option value="care">Vzdrževanje</option>
-              </select>
-            </label>
             <label>Opiši svoj projekt
-              <textarea name="message" required placeholder="Kaj naj aplikacija dela in komu je namenjena?"></textarea>
+              <textarea name="message" required placeholder="S čim se ukvarja tvoje podjetje, komu je namenjeno in pri čem naj pomaga spletna stran ali aplikacija? Pomagajo tudi povezave do strani ali aplikacij, ki so ti všeč."></textarea>
             </label>
             <label class="hp" aria-hidden="true">Leave this empty <input name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></label>
-            <button class="btn btn-primary" type="submit">Pošlji povpraševanje za ponudbo &rarr;</button>
+            <button class="btn btn-primary" type="submit">Pošlji povpraševanje &rarr;</button>
             <p class="form-note">Odpre se tvoja aplikacija za e-pošto s pripravljenim sporočilom.</p>
             <p class="form-status" role="status" aria-live="polite" hidden></p>
           </form>
@@ -298,6 +301,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=7"></script>
+  <script src="../script.js?v=8"></script>
 </body>
 </html>

@@ -125,7 +125,7 @@ if ("IntersectionObserver" in window) {
   revealed.forEach((el) => el.classList.add("visible"));
 }
 
-// Project request form ("Build my app"): sent with Formspree, or opens the email app until an ID is set
+// Quote request form ("Get a quote"): sent with Formspree, or opens the email app until an ID is set
 document.querySelectorAll("form.project-form").forEach((form) => {
   const note = form.querySelector(".form-note");
   // A package link (services?package=website) picks that package in the form
@@ -140,22 +140,25 @@ document.querySelectorAll("form.project-form").forEach((form) => {
     if (data.get("_gotcha")) return; // a bot filled the hidden field
     const picked = [...form.querySelectorAll('.pick-chip[aria-pressed="true"]')].map((c) => c.textContent);
     const name = data.get("name").trim();
-    const subject = `New app project: ${data.get("type")} (from ${name})`;
+    const chosen = packageSelect && packageSelect.value ? packageSelect.selectedOptions[0].textContent : T.notSure;
+    const subject = `Quote request: ${chosen} (from ${name})`;
     const fields = {
       name,
       email: data.get("email"),
-      type: data.get("type"),
-      package: packageSelect && packageSelect.value ? packageSelect.selectedOptions[0].textContent : T.notSure,
+      package: chosen,
       budget: data.get("budget") || T.notSure,
+      timeline: data.get("timeline") || T.notSure,
+      company: data.get("company") || "-",
       features: picked.length ? picked.join(", ") : T.notSure,
       message: data.get("message"),
     };
     const body = [
       `Name: ${fields.name}`,
       `Email: ${fields.email}`,
-      `Project type: ${fields.type}`,
-      `Package: ${fields.package}`,
+      `Business or website: ${fields.company}`,
+      `Needs: ${fields.package}`,
       `Budget: ${fields.budget}`,
+      `Timeline: ${fields.timeline}`,
       `Features: ${fields.features}`,
       "",
       fields.message,
