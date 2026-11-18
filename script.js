@@ -14,6 +14,7 @@ const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
 
 // Promotion for ad campaigns. Set active to true and every package price shows the old price
 // crossed out, the discounted price and a badge. Set it back to false to end the offer.
+// The discounted prices themselves (data-promo) are set per package on the pages.
 const PROMO = {
   active: true,
   percent: 50,
@@ -27,7 +28,8 @@ if (PROMO.active) {
 
   document.querySelectorAll(".amount[data-price]").forEach((el) => {
     const full = Number(el.dataset.price);
-    el.innerHTML = `<s>${fmt(full)}</s> ${fmt(cut(full))}`;
+    const now = el.dataset.promo ? Number(el.dataset.promo) : cut(full);
+    el.innerHTML = `<s>${fmt(full)}</s> ${fmt(now)}`;
     const card = el.closest(".package, .plan-summary, .care-plan, .other-plan, .band-plan");
     if (card && !card.querySelector(".promo-badge")) {
       card.classList.add("is-promo");
@@ -38,13 +40,13 @@ if (PROMO.active) {
     }
   });
   document.querySelectorAll("option[data-price]").forEach((o) => {
-    o.textContent = `${o.dataset.name} (${LANG === "sl" ? "od" : "from"} ${fmt(cut(Number(o.dataset.price)))}, ${badge})`;
+    o.textContent = `${o.dataset.name} (${LANG === "sl" ? "od" : "from"} ${fmt(o.dataset.promo ? Number(o.dataset.promo) : cut(Number(o.dataset.price)))}, ${badge})`;
   });
   const hero = document.querySelector(".packages, .plan-summary") && document.querySelector(".page-hero .container");
   if (hero) {
     const note = document.createElement("p");
     note.className = "promo-note";
-    note.textContent = LANG === "sl" ? `Akcija: ${PROMO.percent} % popusta na vse pakete.` : `Special offer: ${PROMO.percent}% off every package.`;
+    note.textContent = LANG === "sl" ? `Akcija: ${PROMO.percent} % popusta na izdelavo spletnih strani in aplikacij.` : `Special offer: ${PROMO.percent}% off every website and app build.`;
     hero.appendChild(note);
   }
 }
