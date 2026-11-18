@@ -15,7 +15,7 @@ const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
 // Promotion for ad campaigns. Set active to true and every package price shows the old price
 // crossed out, the discounted price and a badge. Set it back to false to end the offer.
 const PROMO = {
-  active: false,
+  active: true,
   percent: 50,
 };
 
