@@ -14,7 +14,7 @@
   &nbsp;·&nbsp;
   <a href="https://slon3studio.si/pages/projects">Aplikacije</a>
   &nbsp;·&nbsp;
-  <a href="https://slon3studio.si/pages/contact#work">Naroči aplikacijo</a>
+  <a href="https://slon3studio.si/pages/contact#work">Pridobi ponudbo</a>
 </p>
 
 ---
@@ -28,7 +28,7 @@ To je uradna spletna stran studia slon3studio. Na njej:
   zasebnosti (Privacy Policy),
 - ima vsaka aplikacija svojo zgodbo »Kako je nastala« (`/pages/<App>/story`), ocene in mnenja iz App Stora ter video, kjer ga imamo,
 - so na strani [Novice](https://slon3studio.si/pages/news) kratke objave za vsako izdano posodobitev,
-- lahko stranke prek obrazca »Build my app« pošljejo povpraševanje za izdelavo aplikacije, obiskovalci pa se prijavijo na e-novice.
+- lahko stranke prek obrazca »Get a quote« (z izbiro paketa iz »Storitev«) pošljejo povpraševanje za ponudbo, obiskovalci pa se prijavijo na e-novice.
 
 Stran je v angleščini (`/`) in slovenščini (`/sl/`). Gumb SL / EN v glavi preklaplja med jezikoma. Podpora in politika zasebnosti sta zaenkrat samo v angleščini.
 
