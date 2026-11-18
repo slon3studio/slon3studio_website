@@ -112,7 +112,7 @@ Nove aplikacije so že v delu.
 - **Nova objava v Novicah:** kopiraj en `<article class="post">` v `pages/news.html` in `sl/pages/news.html`, mu daj nov `id` in datum ter ga postavi na vrh. Piši samo o izdanih različicah (WhatsNew v mapi aplikacije).
 - **Ocene:** povprečje in število ocen se na strani osvežita sama iz App Stora. Novo napisano mnenje dodaš ročno: v razdelku »Ratings & reviews« je predloga v komentarju. Mnenje prepiši dobesedno.
 - **Video:** datoteko `<App>.mp4` (pokončna, H.264, do ~25 MB) in sliko `<App>-poster.jpg` daj v `assets/video/`, nato na strani aplikacije zamenjaj komentar `VIDEO SLOT` z blokom, ki je v njem.
-- **Storitve in cene:** pregled paketov je v `pages/services.html`, vsak paket pa ima svojo stran v `pages/services/<paket>.html` (in enako pod `sl/`). Cena je na obeh mestih. Gumb paketa odpre obrazec z že izbranim paketom (`contact?package=website#work`).
+- **Storitve in cene:** pregled paketov je v `pages/services.html`, vsak paket pa ima svojo stran v `pages/plans/<paket>.html` (in enako pod `sl/`). Cena je na obeh mestih. Gumb paketa odpre obrazec z že izbranim paketom (`contact?package=website#work`).
 - **Slovenščina:** vsaka angleška stran ima slovensko dvojnico pod `/sl/` z enako potjo. Ko spremeniš eno, spremeni tudi drugo.
 
 ## Kontakt

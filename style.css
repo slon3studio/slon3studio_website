@@ -2321,3 +2321,13 @@ button[aria-busy="true"] {
     grid-template-columns: 1fr;
   }
 }
+
+.other-plan .status-pill {
+  position: static;
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+
+.other-plan.is-featured {
+  border-color: var(--yellow);
+}
