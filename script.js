@@ -6,7 +6,7 @@ const STUDIO_EMAIL = "slon3studio@gmail.com";
 // newsletter) and paste each ID here, e.g. "xyzabcde" from https://formspree.io/f/xyzabcde.
 // While an ID is empty, that form falls back to opening the visitor's email app.
 const FORMSPREE = {
-  project: "",
+  project: "xrpqqvjq",
   newsletter: "",
 };
 
