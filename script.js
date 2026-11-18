@@ -7,7 +7,7 @@ const STUDIO_EMAIL = "slon3studio@gmail.com";
 // While an ID is empty, that form falls back to opening the visitor's email app.
 const FORMSPREE = {
   project: "xrpqqvjq",
-  newsletter: "",
+  newsletter: "myewwaov",
 };
 
 const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
