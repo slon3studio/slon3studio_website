@@ -6,6 +6,9 @@
   <title>Apps | slon3studio</title>
   <meta name="description" content="All apps made by slon3studio." />
   <link rel="canonical" href="https://slon3studio.si/pages/projects" />
+  <link rel="alternate" hreflang="en" href="https://slon3studio.si/pages/projects" />
+  <link rel="alternate" hreflang="sl" href="https://slon3studio.si/sl/pages/projects" />
+  <link rel="alternate" hreflang="x-default" href="https://slon3studio.si/pages/projects" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="slon3studio" />
   <meta property="og:title" content="Apps | slon3studio" />
@@ -20,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=10" />
+  <link rel="stylesheet" href="../style.css?v=11" />
 </head>
 <body>
   <header class="site-header">
@@ -33,9 +36,11 @@
       <nav class="site-nav">
         <a href="../">Home</a>
         <a href="projects" aria-current="page">Apps</a>
+        <a href="news">News</a>
         <a href="about_us">About</a>
         <a href="contact">Contact</a>
         <a class="nav-cta" href="contact#work">Build my app</a>
+        <a class="lang-switch" href="../sl/pages/projects" hreflang="sl" lang="sl" title="Slovenščina" aria-label="Slovenščina">SL</a>
       </nav>
     </div>
   </header>
@@ -51,7 +56,7 @@
 
     <section class="section" style="padding-top: 20px">
       <div class="container">
-        <div class="filter-bar" role="group" aria-label="Filter apps">
+        <div class="filter-bar" data-filter-for="apps" role="group" aria-label="Filter apps">
           <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="filter-chip" data-filter="live" aria-pressed="false">On the App Store</button>
           <button type="button" class="filter-chip" data-filter="iphone" aria-pressed="false">iPhone</button>
@@ -115,12 +120,13 @@
       <span>&copy; <span id="year">2026</span> slon3studio</span>
       <div class="footer-links">
         <a href="projects">Apps</a>
+        <a href="news">News</a>
         <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a>
         <a href="https://github.com/slon3studio">GitHub</a>
       </div>
     </div>
   </footer>
 
-  <script src="../script.js?v=5"></script>
+  <script src="../script.js?v=6"></script>
 </body>
 </html>

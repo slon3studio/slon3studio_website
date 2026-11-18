@@ -26,9 +26,11 @@ To je uradna spletna stran studia slon3studio. Na njej:
 - predstavimo studio in vse naše aplikacije,
 - ima vsaka aplikacija svojo stran s pregledom, podporo (Support) in politiko
   zasebnosti (Privacy Policy),
-- lahko stranke prek obrazca »Build my app« pošljejo povpraševanje za izdelavo aplikacije.
+- ima vsaka aplikacija svojo zgodbo »Kako je nastala« (`/pages/<App>/story`), ocene in mnenja iz App Stora ter video, kjer ga imamo,
+- so na strani [Novice](https://slon3studio.si/pages/news) kratke objave za vsako izdano posodobitev,
+- lahko stranke prek obrazca »Build my app« pošljejo povpraševanje za izdelavo aplikacije, obiskovalci pa se prijavijo na e-novice.
 
-Vsebina strani je v angleščini.
+Stran je v angleščini (`/`) in slovenščini (`/sl/`). Gumb SL / EN v glavi preklaplja med jezikoma. Podpora in politika zasebnosti sta zaenkrat samo v angleščini.
 
 ## O studiu
 
@@ -103,6 +105,14 @@ Nove aplikacije so že v delu.
 
 - **Spletna stran:** <https://slon3studio.si/>
 - **Lokalno:** v mapi zaženi `python3 -m http.server` in odpri <http://localhost:8000>. Povezave Home kažejo na mapo (`./`), zato jih strežnik odpre kot `index.html`. Povezave so brez `.html` (npr. `/pages/projects`), GitHub Pages pa jih sam poveže z datoteko. Pri lokalnem ogledu `script.js` končnico `.html` doda nazaj. Stari naslovi s `.html` (tudi tisti v App Storu) še vedno delujejo.
+
+## Urejanje
+
+- **Formspree (obrazec in e-novice):** na [formspree.io](https://formspree.io) ustvari dva obrazca, enega za povpraševanja in enega za e-novice, in njuna ID-ja (npr. `xyzabcde` iz `https://formspree.io/f/xyzabcde`) prilepi v `FORMSPREE` na vrhu `script.js`. Dokler je ID prazen, obrazec odpre aplikacijo za e-pošto, tako kot prej.
+- **Nova objava v Novicah:** kopiraj en `<article class="post">` v `pages/news.html` in `sl/pages/news.html`, mu daj nov `id` in datum ter ga postavi na vrh. Piši samo o izdanih različicah (WhatsNew v mapi aplikacije).
+- **Ocene:** povprečje in število ocen se na strani osvežita sama iz App Stora. Novo napisano mnenje dodaš ročno: v razdelku »Ratings & reviews« je predloga v komentarju. Mnenje prepiši dobesedno.
+- **Video:** datoteko `<App>.mp4` (pokončna, H.264, do ~25 MB) in sliko `<App>-poster.jpg` daj v `assets/video/`, nato na strani aplikacije zamenjaj komentar `VIDEO SLOT` z blokom, ki je v njem.
+- **Slovenščina:** vsaka angleška stran ima slovensko dvojnico pod `/sl/` z enako potjo. Ko spremeniš eno, spremeni tudi drugo.
 
 ## Kontakt
 

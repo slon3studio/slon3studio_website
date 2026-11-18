@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>How Mouse Controller was made | slon3studio</title>
+  <meta name="description" content="Mouse Controller started with a simple wish: control the Mac from the couch, during a presentation or on a TV, without buying any extra hardware." />
+  <link rel="canonical" href="https://slon3studio.si/pages/MouseController/story" />
+  <link rel="alternate" hreflang="en" href="https://slon3studio.si/pages/MouseController/story" />
+  <link rel="alternate" hreflang="sl" href="https://slon3studio.si/sl/pages/MouseController/story" />
+  <link rel="alternate" hreflang="x-default" href="https://slon3studio.si/pages/MouseController/story" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="slon3studio" />
+  <meta property="og:title" content="How Mouse Controller was made | slon3studio" />
+  <meta property="og:description" content="Mouse Controller started with a simple wish: control the Mac from the couch, during a presentation or on a TV, without buying any extra hardware." />
+  <meta property="og:url" content="https://slon3studio.si/pages/MouseController/story" />
+  <meta property="og:image" content="https://slon3studio.si/assets/RemoteMouseIcon-256.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo-32.png" />
+  <link rel="apple-touch-icon" href="../../assets/logo-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css?v=11" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="../../">
+        <img src="../../assets/logo.svg" alt="" width="38" height="38" />
+        slon3studio
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav class="site-nav">
+        <a href="../../">Home</a>
+        <a href="../projects" aria-current="page">Apps</a>
+        <a href="../news">News</a>
+        <a href="../about_us">About</a>
+        <a href="../contact">Contact</a>
+        <a class="nav-cta" href="../contact#work">Build my app</a>
+        <a class="lang-switch" href="../../sl/pages/MouseController/story.html" hreflang="sl" lang="sl" title="Slovenščina" aria-label="Slovenščina">SL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container app-hero">
+      <div class="app-icon lg"><img src="../../assets/RemoteMouseIcon-256.png" alt="Mouse Controller app icon" width="128" height="128" /></div>
+      <div>
+        <span class="eyebrow">Story</span>
+        <h1>How Mouse Controller was made</h1>
+        <p>Mouse Controller started with a simple wish: control the Mac from the couch, during a presentation or on a TV, without buying any extra hardware. The phone in your pocket already has a great touch surface.</p>
+        <div class="app-actions">
+          <a class="store-badge" href="https://apps.apple.com/app/id6766896246"><svg class="store-logo" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small>App Store</span></a>
+        </div>
+        <nav class="app-subnav"><a href="./">Overview</a><a href="SupportPage">Support</a><a href="PrivacyPolicy">Privacy Policy</a><a href="story" aria-current="page">Story</a></nav>
+      </div>
+    </div>
+
+    <section class="container story">
+      <div class="content-block reveal">
+        <h2>Two apps that talk directly</h2>
+        <p>Mouse Controller is really two apps. The iPhone app is the trackpad, keyboard and remote you hold. A small Mac app lives in the menu bar and carries out the cursor, keyboard and volume actions.</p>
+        <p>The two talk to each other straight over your Wi-Fi or your iPhone&#x27;s Personal Hotspot. There is no server and no account, and nothing goes through the internet.</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Finding the Mac without an IP address</h2>
+        <p>Nobody wants to type an IP address. The Mac app announces itself on the local network with Bonjour, so the iPhone simply lists the Macs it finds nearby. When the iPhone is the hotspot, it also checks the hotspot&#x27;s own address range, in case Bonjour isn&#x27;t available there.</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Private on a shared network</h2>
+        <p>A remote that can type on your Mac has to be private, even on café Wi-Fi. You pair once with an 8-character code, and both apps turn that code into a key for an encrypted TLS connection. Only an iPhone that knows the code can connect, and after five wrong codes the Mac refuses all connections for 30 seconds.</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Making it feel like a real trackpad</h2>
+        <p>On the Mac, every movement and key press becomes a system event, which is why macOS asks for Accessibility permission. Shortcuts follow your current keyboard layout, so ⌘Z works on non-US keyboards too.</p>
+        <p>Version 1.3 was a complete redesign: a guided start, a pointer that moves with your finger from the very first touch, pairing boxes like a verification code, and a checklist for when your Mac doesn&#x27;t show up.</p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Timeline</h2>
+        <ol class="timeline"><li><time>October 2026</time><span>1.2, the first App Store release</span></li><li><time>28 Oct 2026</time><span>1.3, a completely new design</span></li></ol>
+        <p><a href="../news#MouseController">Every update in News &rarr;</a></p>
+      </div>
+      <div class="content-block reveal">
+        <h2>Built with</h2>
+        <ul class="tags"><li>SwiftUI</li><li>Network framework</li><li>Bonjour</li><li>Core Graphics</li></ul>
+      </div>
+      <div class="content-block reveal">
+        <div class="story-teaser">
+          <div>
+            <span class="eyebrow">Your idea next?</span>
+            <h2>We can build your app too</h2>
+            <p class="muted">From the first sketch to the App Store. Tell us what you have in mind.</p>
+          </div>
+          <div class="btn-row"><a class="btn btn-primary" href="../contact#work">Build my app</a></div>
+        </div>
+      </div>
+      <div class="content-block reveal">
+        <h2>More stories</h2>
+        <ul class="story-list"><li><a href="../PayDay/story"><img src="../../assets/PayDayIcon-256.png" alt="" width="28" height="28" loading="lazy" />PayDay</a></li><li><a href="../Tacka/story"><img src="../../assets/TackaIcon-256.png" alt="" width="28" height="28" loading="lazy" />Tačka</a></li><li><a href="../Slippy/story"><img src="../../assets/SlippyIcon-256.png" alt="" width="28" height="28" loading="lazy" />Slippy</a></li><li><a href="../Rotera/story"><img src="../../assets/RoteraIcon-256.png" alt="" width="28" height="28" loading="lazy" />Rotera</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>&copy; <span id="year">2026</span> slon3studio</span>
+      <div class="footer-links">
+        <a href="../projects">Apps</a>
+        <a href="../news">News</a>
+        <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a>
+        <a href="https://github.com/slon3studio">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js?v=6"></script>
+</body>
+</html>

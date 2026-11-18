@@ -2,6 +2,66 @@
 
 const STUDIO_EMAIL = "slon3studio@gmail.com";
 
+// Formspree form IDs. Create two forms on formspree.io (one for project requests, one for the
+// newsletter) and paste each ID here, e.g. "xyzabcde" from https://formspree.io/f/xyzabcde.
+// While an ID is empty, that form falls back to opening the visitor's email app.
+const FORMSPREE = {
+  project: "",
+  newsletter: "",
+};
+
+const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
+const T = {
+  en: {
+    noteSend: "Your request comes straight to our inbox. We'll reply by email.",
+    sending: "Sending...",
+    sentProject: "Thanks! Your request is on its way. We'll reply by email soon.",
+    sentNews: "You're on the list. Thanks for subscribing!",
+    failed: "Something went wrong and the message wasn't sent.",
+    tryMail: "Email us instead",
+    notSure: "Not sure yet",
+    subscribeSubject: "Newsletter: please subscribe me",
+    subscribeBody: "Please add this address to the slon3studio newsletter:",
+  },
+  sl: {
+    noteSend: "Povpraševanje pride naravnost v naš nabiralnik. Odgovorimo ti po e-pošti.",
+    sending: "Pošiljam ...",
+    sentProject: "Hvala! Povpraševanje je poslano. Kmalu ti odgovorimo po e-pošti.",
+    sentNews: "Prijavljen si. Hvala!",
+    failed: "Nekaj je šlo narobe in sporočilo ni bilo poslano.",
+    tryMail: "Piši nam po e-pošti",
+    notSure: "Še ne vem",
+    subscribeSubject: "E-novice: prijava",
+    subscribeBody: "Prosim, dodajte ta naslov na seznam e-novic slon3studio:",
+  },
+}[LANG];
+
+const mailtoLink = (subject, body) =>
+  `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+async function sendToFormspree(id, payload) {
+  const res = await fetch(`https://formspree.io/f/${id}`, {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Formspree ${res.status}`);
+}
+
+function showStatus(form, text, isError, mailHref) {
+  const status = form.querySelector(".form-status");
+  if (!status) return;
+  status.hidden = false;
+  status.classList.toggle("is-error", Boolean(isError));
+  status.textContent = text;
+  if (mailHref) {
+    const a = document.createElement("a");
+    a.href = mailHref;
+    a.textContent = T.tryMail;
+    status.append(" ", a);
+  }
+}
+
 // Footer year
 document.querySelectorAll("#year").forEach((el) => {
   el.textContent = new Date().getFullYear();
@@ -64,28 +124,119 @@ if ("IntersectionObserver" in window) {
   revealed.forEach((el) => el.classList.add("visible"));
 }
 
-// Project request form ("Build my app"): opens the visitor's email app with the message filled in
+// Project request form ("Build my app"): sent with Formspree, or opens the email app until an ID is set
 document.querySelectorAll("form.project-form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+  const note = form.querySelector(".form-note");
+  if (FORMSPREE.project && note) note.textContent = T.noteSend;
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = new FormData(form);
+    if (data.get("_gotcha")) return; // a bot filled the hidden field
     const picked = [...form.querySelectorAll('.pick-chip[aria-pressed="true"]')].map((c) => c.textContent);
     const name = data.get("name").trim();
     const subject = `New app project: ${data.get("type")} (from ${name})`;
+    const fields = {
+      name,
+      email: data.get("email"),
+      type: data.get("type"),
+      budget: data.get("budget") || T.notSure,
+      features: picked.length ? picked.join(", ") : T.notSure,
+      message: data.get("message"),
+    };
     const body = [
-      `Name: ${name}`,
-      `Email: ${data.get("email")}`,
-      `Project type: ${data.get("type")}`,
-      `Budget: ${data.get("budget") || "Not sure yet"}`,
-      `Features: ${picked.length ? picked.join(", ") : "Not sure yet"}`,
+      `Name: ${fields.name}`,
+      `Email: ${fields.email}`,
+      `Project type: ${fields.type}`,
+      `Budget: ${fields.budget}`,
+      `Features: ${fields.features}`,
       "",
-      data.get("message"),
+      fields.message,
     ].join("\n");
 
-    window.location.href =
-      `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
+    if (!FORMSPREE.project) {
+      window.location.href = mailtoLink(subject, body);
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.setAttribute("aria-busy", "true");
+    showStatus(form, T.sending);
+    try {
+      await sendToFormspree(FORMSPREE.project, { ...fields, _subject: subject, language: LANG });
+      form.reset();
+      form.querySelectorAll(".pick-chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+      showStatus(form, T.sentProject);
+    } catch {
+      showStatus(form, T.failed, true, mailtoLink(subject, body));
+    } finally {
+      button.removeAttribute("aria-busy");
+    }
   });
+});
+
+// Newsletter sign-up: Formspree, or an email to the studio until an ID is set
+document.querySelectorAll("form.newsletter-form").forEach((form) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    if (data.get("_gotcha")) return;
+    const email = data.get("email").trim();
+    const mail = mailtoLink(T.subscribeSubject, `${T.subscribeBody} ${email}`);
+
+    if (!FORMSPREE.newsletter) {
+      window.location.href = mail;
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.setAttribute("aria-busy", "true");
+    showStatus(form, T.sending);
+    try {
+      await sendToFormspree(FORMSPREE.newsletter, { email, _subject: "Newsletter sign-up", language: LANG, page: location.pathname });
+      form.reset();
+      showStatus(form, T.sentNews);
+    } catch {
+      showStatus(form, T.failed, true, mail);
+    } finally {
+      button.removeAttribute("aria-busy");
+    }
+  });
+});
+
+// App Store rating: the page ships with the last known numbers, then refreshes them from Apple
+document.querySelectorAll(".rating-summary[data-app-id]").forEach((box, i) => {
+  const cb = `slonRating${i}`;
+  const script = document.createElement("script");
+  const done = () => {
+    delete window[cb];
+    script.remove();
+  };
+  window[cb] = (data) => {
+    const r = data && data.results && data.results[0];
+    if (r && r.userRatingCount > 0) {
+      const avg = Math.round(r.averageUserRating * 10) / 10;
+      const n = r.userRatingCount;
+      const score = avg.toFixed(1);
+      box.querySelector(".rating-score").textContent = LANG === "sl" ? score.replace(".", ",") : score;
+      const stars = box.querySelector(".stars");
+      stars.style.setProperty("--rating", avg);
+      stars.setAttribute("aria-label", LANG === "sl" ? `${score.replace(".", ",")} od 5 zvezdic` : `${score} out of 5 stars`);
+      let word;
+      if (LANG === "sl") {
+        const m = n % 100;
+        word = m === 1 ? "ocena" : m === 2 ? "oceni" : m === 3 || m === 4 ? "ocene" : "ocen";
+        box.querySelector(".rating-count").textContent = `${n} ${word} v App Storu`;
+      } else {
+        box.querySelector(".rating-count").textContent = `${n} rating${n === 1 ? "" : "s"} on the App Store`;
+      }
+      box.classList.remove("is-empty");
+    }
+    done();
+  };
+  script.src = `https://itunes.apple.com/lookup?id=${encodeURIComponent(box.dataset.appId)}&country=si&callback=${cb}`;
+  script.onerror = done;
+  document.head.appendChild(script);
 });
 
 // Screenshot galleries: arrow buttons on hover (desktop), swipe on phones, tap a shot to open it large
@@ -236,7 +387,7 @@ function openLightbox(imgs, index, opener) {
 }
 
 // Apps page: filter by status or platform
-const filterBar = document.querySelector(".filter-bar");
+const filterBar = document.querySelector('.filter-bar[data-filter-for="apps"]');
 
 if (filterBar) {
   const cards = [...document.querySelectorAll(".app-grid .app-card")];
@@ -260,6 +411,29 @@ if (filterBar) {
   });
 }
 
+// News page: filter posts by app. A link like news#Rotera opens with that app picked.
+const newsFilter = document.querySelector('.filter-bar[data-filter-for="news"]');
+
+if (newsFilter) {
+  const posts = [...document.querySelectorAll(".post[data-app]")];
+  const apply = (f) => {
+    newsFilter.querySelectorAll(".filter-chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.filter === f)));
+    posts.forEach((p) => {
+      const show = f === "all" || p.dataset.app === f;
+      p.classList.toggle("is-hidden", !show);
+      if (show) p.classList.add("visible");
+    });
+  };
+  newsFilter.addEventListener("click", (e) => {
+    const chip = e.target.closest(".filter-chip");
+    if (!chip) return;
+    apply(chip.dataset.filter);
+    history.replaceState(null, "", chip.dataset.filter === "all" ? location.pathname : `#${chip.dataset.filter}`);
+  });
+  const fromHash = decodeURIComponent(location.hash.slice(1));
+  if (newsFilter.querySelector(`[data-filter="${CSS.escape(fromHash)}"]`)) apply(fromHash);
+}
+
 // Project form: tap features to include them in the request
 document.querySelectorAll(".pick-chip").forEach((chip) => {
   chip.addEventListener("click", () => {
@@ -271,7 +445,15 @@ document.querySelectorAll(".pick-chip").forEach((chip) => {
 const heroArt = document.querySelector(".hero-art");
 
 if (heroArt) {
-  const lines = [
+  const lines = LANG === "sl" ? [
+    "Tuuut!",
+    "Živjo! Jaz sem Slon.",
+    "Slon je po angleško elephant.",
+    "Imaš idejo za aplikacijo?",
+    "Nobene funkcije ne pozabim.",
+    "Narejeno s SwiftUI in arašidi.",
+    "Kar daj naprej ...",
+  ] : [
     "Toot toot!",
     "Hi! I'm Slon.",
     "Slon means elephant in Slovenian.",
@@ -283,9 +465,9 @@ if (heroArt) {
   let taps = 0;
   heroArt.tabIndex = 0;
   heroArt.setAttribute("role", "button");
-  heroArt.setAttribute("aria-label", "Say hi to the slon3studio elephant");
+  heroArt.setAttribute("aria-label", LANG === "sl" ? "Pozdravi slona slon3studio" : "Say hi to the slon3studio elephant");
   const hint = heroArt.querySelector(".tap-hint");
-  if (hint && window.matchMedia("(hover: hover)").matches) hint.textContent = "Click me!";
+  if (hint && window.matchMedia("(hover: hover)").matches) hint.textContent = LANG === "sl" ? "Klikni me!" : "Click me!";
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -314,7 +496,7 @@ if (heroArt) {
     const bubble = document.createElement("span");
     bubble.className = "elephant-bubble";
     bubble.setAttribute("role", "status");
-    bubble.textContent = taps % 8 === 0 ? "Peanut party!" : lines[(taps - 1) % lines.length];
+    bubble.textContent = taps % 8 === 0 ? (LANG === "sl" ? "Arašidova zabava!" : "Peanut party!") : lines[(taps - 1) % lines.length];
     heroArt.appendChild(bubble);
     bubble.addEventListener("animationend", () => bubble.remove());
 
