@@ -2368,3 +2368,11 @@ button[aria-busy="true"] {
   color: #fda4af;
   font-weight: 700;
 }
+
+.feature-grid li.inherits {
+  grid-column: 1 / -1;
+  border-style: dashed;
+  border-color: var(--yellow);
+  color: var(--yellow);
+  font-weight: 700;
+}

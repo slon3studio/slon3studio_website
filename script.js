@@ -76,6 +76,11 @@ const T = {
 const mailtoLink = (subject, body) =>
   `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+// Count a form sent as an event in GoatCounter (cookie-free statistics), if it has loaded
+const countEvent = (path, title) => {
+  if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true });
+};
+
 async function sendToFormspree(id, payload) {
   const res = await fetch(`https://formspree.io/f/${id}`, {
     method: "POST",
@@ -214,6 +219,7 @@ document.querySelectorAll("form.project-form").forEach((form) => {
       form.reset();
       form.querySelectorAll(".pick-chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
       showStatus(form, T.sentProject);
+      countEvent(`quote-sent-${fields.package}`.replace(/[^a-z0-9-]+/gi, "-").toLowerCase(), "Quote request sent");
     } catch {
       showStatus(form, T.failed, true, mailtoLink(subject, body));
     } finally {
@@ -243,6 +249,7 @@ document.querySelectorAll("form.newsletter-form").forEach((form) => {
       await sendToFormspree(FORMSPREE.newsletter, { email, _subject: "Newsletter sign-up", language: LANG, page: location.pathname });
       form.reset();
       showStatus(form, T.sentNews);
+      countEvent("newsletter-signup", "Newsletter sign-up");
     } catch {
       showStatus(form, T.failed, true, mail);
     } finally {
