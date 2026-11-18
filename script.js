@@ -73,12 +73,13 @@ if (location.protocol === "file:" || /^(localhost|127\.0\.0\.1)$/.test(location.
   document.querySelectorAll("a[href]").forEach((a) => {
     const href = a.getAttribute("href");
     if (/^[a-z]+:|^#|^\/\//i.test(href)) return;
-    const [path, hash] = href.split("#");
+    const [pathQuery, hash] = href.split("#");
+    const [path, query] = pathQuery.split("?");
     if (!path || /\.[a-z0-9]+$/i.test(path)) return;
     // A local server opens a folder's index.html itself, a plain file does not
     if (path.endsWith("/") && location.protocol !== "file:") return;
     const file = path.endsWith("/") ? path + "index.html" : path + ".html";
-    a.setAttribute("href", file + (hash !== undefined ? "#" + hash : ""));
+    a.setAttribute("href", file + (query !== undefined ? "?" + query : "") + (hash !== undefined ? "#" + hash : ""));
   });
 }
 
@@ -127,6 +128,10 @@ if ("IntersectionObserver" in window) {
 // Project request form ("Build my app"): sent with Formspree, or opens the email app until an ID is set
 document.querySelectorAll("form.project-form").forEach((form) => {
   const note = form.querySelector(".form-note");
+  // A package link (services?package=website) picks that package in the form
+  const wanted = new URLSearchParams(location.search).get("package");
+  const packageSelect = form.querySelector('select[name="package"]');
+  if (wanted && packageSelect && packageSelect.querySelector(`option[value="${CSS.escape(wanted)}"]`)) packageSelect.value = wanted;
   if (FORMSPREE.project && note) note.textContent = T.noteSend;
 
   form.addEventListener("submit", async (event) => {
@@ -140,6 +145,7 @@ document.querySelectorAll("form.project-form").forEach((form) => {
       name,
       email: data.get("email"),
       type: data.get("type"),
+      package: packageSelect && packageSelect.value ? packageSelect.selectedOptions[0].textContent : T.notSure,
       budget: data.get("budget") || T.notSure,
       features: picked.length ? picked.join(", ") : T.notSure,
       message: data.get("message"),
@@ -148,6 +154,7 @@ document.querySelectorAll("form.project-form").forEach((form) => {
       `Name: ${fields.name}`,
       `Email: ${fields.email}`,
       `Project type: ${fields.type}`,
+      `Package: ${fields.package}`,
       `Budget: ${fields.budget}`,
       `Features: ${fields.features}`,
       "",

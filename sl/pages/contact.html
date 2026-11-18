@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=11" />
+  <link rel="stylesheet" href="../../style.css?v=12" />
 </head>
 <body>
   <header class="site-header">
@@ -37,6 +37,7 @@
       <nav class="site-nav">
         <a href="../">Domov</a>
         <a href="projects">Aplikacije</a>
+        <a href="services">Storitve</a>
         <a href="news">Novice</a>
         <a href="about_us">O nas</a>
         <a href="contact" aria-current="page">Kontakt</a>
@@ -67,6 +68,7 @@
               <li>Spletne strani in predstavitvene strani</li>
               <li>Igre in interaktivni projekti</li>
             </ul>
+            <p><a href="services">Oglej si pakete in cene &rarr;</a></p>
             <p>Raje po e-pošti? Piši nam na<br /><a class="contact-chip" href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a></p>
           </div>
           <form class="form project-form">
@@ -111,6 +113,16 @@
                 <button type="button" class="pick-chip" aria-pressed="false">Več jezikov</button>
               </div>
             </fieldset>
+            <label>Paket (neobvezno)
+              <select name="package">
+                <option value="">Še ne vem</option>
+                <option value="landing">Predstavitvena stran</option>
+                <option value="website">Spletna stran za podjetje</option>
+                <option value="app">Aplikacija za iPhone</option>
+                <option value="custom">Aplikacija po meri</option>
+                <option value="care">Vzdrževanje</option>
+              </select>
+            </label>
             <label>Opiši svoj projekt
               <textarea name="message" required placeholder="Kaj naj aplikacija dela in komu je namenjena?"></textarea>
             </label>
@@ -136,6 +148,6 @@
     </div>
   </footer>
 
-  <script src="../../script.js?v=6"></script>
+  <script src="../../script.js?v=7"></script>
 </body>
 </html>

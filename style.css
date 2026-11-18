@@ -1916,3 +1916,102 @@ button[aria-busy="true"] {
     padding: 22px;
   }
 }
+
+/* ---------- Services: packages ---------- */
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.package {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.package.is-featured {
+  border-color: var(--yellow);
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(255, 194, 14, 0.12), transparent 70%),
+    var(--card);
+}
+
+.package .status-pill {
+  position: static;
+  align-self: flex-start;
+}
+
+.package h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.package p {
+  margin: 0;
+}
+
+.package .post-points {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.package-price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--yellow);
+}
+
+.price-from {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.package-time {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.package .btn {
+  justify-content: center;
+}
+
+.care-plan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+  margin: 22px 0 14px;
+  padding: 24px 26px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
+.care-plan h3 {
+  margin: 0 0 4px;
+}
+
+.care-plan .package-price {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+.care-plan p {
+  margin: 0;
+}
+
+/* Seven nav items: tighten between phone and wide desktop */
+@media (max-width: 1000px) and (min-width: 721px) {
+  .site-nav a {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
