@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slon3studio.si/sitemap.xml

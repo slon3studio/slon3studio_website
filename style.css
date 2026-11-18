@@ -2331,3 +2331,40 @@ button[aria-busy="true"] {
 .other-plan.is-featured {
   border-color: var(--yellow);
 }
+
+/* ---------- Promotion (switched on in script.js) ---------- */
+
+.is-promo {
+  position: relative;
+}
+
+.promo-badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f43f5e;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+
+.amount s {
+  margin-right: 4px;
+  font-size: 0.6em;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.promo-note {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(244, 63, 94, 0.14);
+  color: #fda4af;
+  font-weight: 700;
+}

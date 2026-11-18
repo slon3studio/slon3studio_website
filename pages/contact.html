@@ -14,8 +14,8 @@
   <meta property="og:title" content="Contact | slon3studio" />
   <meta property="og:description" content="Contact slon3studio or start a new app project." />
   <meta property="og:url" content="https://slon3studio.si/pages/contact" />
-  <meta property="og:image" content="https://slon3studio.si/assets/logo-512.png" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://slon3studio.si/assets/og-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0b0d" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo-32.png" />
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=16" />
+  <link rel="stylesheet" href="../style.css?v=18" />
 </head>
 <body>
   <header class="site-header">
@@ -77,9 +77,9 @@
             <label>What do you need?
               <select name="package">
                   <option value="">Not sure yet, help me choose</option>
-                  <option value="landing">Landing page (from &euro;490)</option>
-                  <option value="website">Business website (from &euro;990)</option>
-                  <option value="app">iPhone app (from &euro;2,900)</option>
+                  <option value="landing" data-price="490" data-name="Landing page">Landing page (from &euro;490)</option>
+                  <option value="website" data-price="990" data-name="Business website">Business website (from &euro;990)</option>
+                  <option value="app" data-price="2900" data-name="Mobile app">Mobile app (from &euro;2,900)</option>
                   <option value="custom">Custom app</option>
                   <option value="care">Care plan for an existing site or app</option>
                   <option value="other">Something else</option>
@@ -104,8 +104,8 @@
                 </select>
               </label>
             </div>
-            <label>Business or website (optional)
-              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" />
+            <label>Company name or current website (optional)
+              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" placeholder="e.g. Ana Hair Studio or www.example.com" />
             </label>
             <fieldset class="picker">
               <legend>What should it have? <span class="picker-hint">Tap all that apply, it's fine to skip</span></legend>
@@ -121,7 +121,7 @@
                 <button type="button" class="pick-chip" aria-pressed="false">Notifications</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Camera &amp; scanning</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Admin view</button>
-                <button type="button" class="pick-chip" aria-pressed="false">iCloud sync</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Cloud sync</button>
               </div>
             </fieldset>
             <label>Tell us about your project
@@ -150,6 +150,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=10"></script>
+  <script src="../script.js?v=12"></script>
 </body>
 </html>

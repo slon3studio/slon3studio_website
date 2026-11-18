@@ -113,6 +113,8 @@ Nove aplikacije so že v delu.
 - **Ocene:** povprečje in število ocen se na strani osvežita sama iz App Stora. Novo napisano mnenje dodaš ročno: v razdelku »Ratings & reviews« je predloga v komentarju. Mnenje prepiši dobesedno.
 - **Video:** datoteko `<App>.mp4` (pokončna, H.264, do ~25 MB) in sliko `<App>-poster.jpg` daj v `assets/video/`, nato na strani aplikacije zamenjaj komentar `VIDEO SLOT` z blokom, ki je v njem.
 - **Storitve in cene:** pregled paketov je v `pages/services.html`, vsak paket pa ima svojo stran v `pages/plans/<paket>.html` (in enako pod `sl/`). Cena je na obeh mestih. Gumb paketa odpre obrazec z že izbranim paketom (`contact?package=website#work`).
+- **Akcija (npr. −50 %):** na vrhu `script.js` v `PROMO` nastavi `active: true` (in po želji `percent`). Vse cene paketov se prečrtajo, pokaže se nova cena in značka. Za konec akcije nastavi nazaj na `false`.
+- **DDV:** pri cenah piše »DDV ni obračunan na podlagi 1. odstavka 94. člena ZDDV-1« (popoldanski s.p., ni zavezanec). Če postaneš zavezanec, to besedilo spremeni.
 - **Slovenščina:** vsaka angleška stran ima slovensko dvojnico pod `/sl/` z enako potjo. Ko spremeniš eno, spremeni tudi drugo.
 
 ## Kontakt

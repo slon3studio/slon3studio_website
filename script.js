@@ -11,6 +11,43 @@ const FORMSPREE = {
 };
 
 const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
+
+// Promotion for ad campaigns. Set active to true and every package price shows the old price
+// crossed out, the discounted price and a badge. Set it back to false to end the offer.
+const PROMO = {
+  active: false,
+  percent: 50,
+};
+
+if (PROMO.active) {
+  const group = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, LANG === "sl" ? "." : ",");
+  const fmt = (n) => (LANG === "sl" ? `${group(n)} €` : `€${group(n)}`);
+  const cut = (n) => Math.round((n * (100 - PROMO.percent)) / 100);
+  const badge = `−${PROMO.percent} %`;
+
+  document.querySelectorAll(".amount[data-price]").forEach((el) => {
+    const full = Number(el.dataset.price);
+    el.innerHTML = `<s>${fmt(full)}</s> ${fmt(cut(full))}`;
+    const card = el.closest(".package, .plan-summary, .care-plan, .other-plan, .band-plan");
+    if (card && !card.querySelector(".promo-badge")) {
+      card.classList.add("is-promo");
+      const b = document.createElement("span");
+      b.className = "promo-badge";
+      b.textContent = badge;
+      card.prepend(b);
+    }
+  });
+  document.querySelectorAll("option[data-price]").forEach((o) => {
+    o.textContent = `${o.dataset.name} (${LANG === "sl" ? "od" : "from"} ${fmt(cut(Number(o.dataset.price)))}, ${badge})`;
+  });
+  const hero = document.querySelector(".packages, .plan-summary") && document.querySelector(".page-hero .container");
+  if (hero) {
+    const note = document.createElement("p");
+    note.className = "promo-note";
+    note.textContent = LANG === "sl" ? `Akcija: ${PROMO.percent} % popusta na vse pakete.` : `Special offer: ${PROMO.percent}% off every package.`;
+    hero.appendChild(note);
+  }
+}
 const T = {
   en: {
     noteSend: "Your request comes straight to our inbox. We'll reply by email.",
@@ -256,7 +293,7 @@ const makeArrow = (dir) => {
   const b = document.createElement("button");
   b.type = "button";
   b.className = `gallery-btn ${dir}`;
-  b.setAttribute("aria-label", dir === "prev" ? "Previous screenshots" : "Next screenshots");
+  b.setAttribute("aria-label", dir === "prev" ? (LANG === "sl" ? "Prejšnji posnetki" : "Previous screenshots") : (LANG === "sl" ? "Naslednji posnetki" : "Next screenshots"));
   b.innerHTML = dir === "prev" ? "&#8592;" : "&#8594;";
   return b;
 };
@@ -288,7 +325,7 @@ galleries.forEach((list) => {
   imgs.forEach((img, i) => {
     img.tabIndex = 0;
     img.setAttribute("role", "button");
-    img.setAttribute("aria-label", `Enlarge screenshot: ${img.alt}`);
+    img.setAttribute("aria-label", `${LANG === "sl" ? "Povečaj posnetek" : "Enlarge screenshot"}: ${img.alt}`);
     img.addEventListener("click", () => openLightbox(imgs, i, img));
     img.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -307,13 +344,13 @@ function buildLightbox() {
   box.hidden = true;
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-modal", "true");
-  box.setAttribute("aria-label", "Screenshot viewer");
+  box.setAttribute("aria-label", LANG === "sl" ? "Ogled posnetkov" : "Screenshot viewer");
   box.innerHTML = `
-    <div class="lightbox-top"><span class="lightbox-count"></span><button type="button" class="lightbox-close" aria-label="Close">&times;</button></div>
+    <div class="lightbox-top"><span class="lightbox-count"></span><button type="button" class="lightbox-close" aria-label="${LANG === "sl" ? "Zapri" : "Close"}">&times;</button></div>
     <div class="lightbox-stage">
-      <button type="button" class="gallery-btn prev" aria-label="Previous screenshot">&#8592;</button>
+      <button type="button" class="gallery-btn prev" aria-label="${LANG === "sl" ? "Prejšnji posnetek" : "Previous screenshot"}">&#8592;</button>
       <img alt="" />
-      <button type="button" class="gallery-btn next" aria-label="Next screenshot">&#8594;</button>
+      <button type="button" class="gallery-btn next" aria-label="${LANG === "sl" ? "Naslednji posnetek" : "Next screenshot"}">&#8594;</button>
     </div>
     <p class="lightbox-caption"></p>`;
   document.body.appendChild(box);

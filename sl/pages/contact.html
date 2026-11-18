@@ -14,9 +14,9 @@
   <meta property="og:title" content="Kontakt | slon3studio" />
   <meta property="og:description" content="Piši studiu slon3studio ali naroči novo aplikacijo." />
   <meta property="og:url" content="https://slon3studio.si/sl/pages/contact" />
-  <meta property="og:image" content="https://slon3studio.si/assets/logo-512.png" />
+  <meta property="og:image" content="https://slon3studio.si/assets/og-sl.png" />
   <meta property="og:locale" content="sl_SI" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b0b0d" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/logo-32.png" />
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=16" />
+  <link rel="stylesheet" href="../../style.css?v=18" />
 </head>
 <body>
   <header class="site-header">
@@ -78,9 +78,9 @@
             <label>Kaj potrebuješ?
               <select name="package">
                   <option value="">Še ne vem, pomagajte mi izbrati</option>
-                  <option value="landing">Predstavitvena stran (od 490 &euro;)</option>
-                  <option value="website">Spletna stran za podjetje (od 990 &euro;)</option>
-                  <option value="app">Aplikacija za iPhone (od 2.900 &euro;)</option>
+                  <option value="landing" data-price="490" data-name="Predstavitvena stran">Predstavitvena stran (od 490 &euro;)</option>
+                  <option value="website" data-price="990" data-name="Spletna stran za podjetje">Spletna stran za podjetje (od 990 &euro;)</option>
+                  <option value="app" data-price="2900" data-name="Mobilna aplikacija">Mobilna aplikacija (od 2.900 &euro;)</option>
                   <option value="custom">Aplikacija po meri</option>
                   <option value="care">Vzdrževanje obstoječe strani ali aplikacije</option>
                   <option value="other">Nekaj drugega</option>
@@ -105,8 +105,8 @@
                 </select>
               </label>
             </div>
-            <label>Podjetje ali spletna stran (neobvezno)
-              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" />
+            <label>Ime podjetja ali obstoječa spletna stran (neobvezno)
+              <input name="company" type="text" autocomplete="organization" enterkeyhint="next" placeholder="npr. Frizerstvo Ana ali www.primer.si" />
             </label>
             <fieldset class="picker">
               <legend>Kaj naj vsebuje? <span class="picker-hint">Izberi vse, kar velja, lahko tudi preskočiš</span></legend>
@@ -122,7 +122,7 @@
                 <button type="button" class="pick-chip" aria-pressed="false">Obvestila</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Kamera in skeniranje</button>
                 <button type="button" class="pick-chip" aria-pressed="false">Skrbniški pogled</button>
-                <button type="button" class="pick-chip" aria-pressed="false">Sinhronizacija iCloud</button>
+                <button type="button" class="pick-chip" aria-pressed="false">Sinhronizacija v oblaku</button>
               </div>
             </fieldset>
             <label>Opiši svoj projekt
@@ -151,6 +151,6 @@
     </div>
   </footer>
 
-  <script src="../../script.js?v=10"></script>
+  <script src="../../script.js?v=12"></script>
 </body>
 </html>
