@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=20" />
+  <link rel="stylesheet" href="../../style.css?v=21" />
 </head>
 <body>
   <header class="site-header">
@@ -87,10 +87,14 @@
         <ul class="feature-grid">
           <li>Staff open the app on their own week: next shift, hours and every day at a glance</li>
           <li>The whole team's schedule one tap away</li>
-          <li>Send wishes for each day: morning, afternoon, either or off</li>
+          <li>Send wishes for each day: morning, afternoon, either, full day or your own hours, like from 17:00</li>
+          <li>Link days in a choice, like Monday or Tuesday, or 4 of these 5 days</li>
           <li>A wish deadline with a countdown the team can see</li>
           <li>Managers see who can work and where people are still missing</li>
-          <li>Draft the week from wishes, following how many people each shift needs</li>
+          <li>Build the week with each day's wishes right under it: one tap adds a person, another puts them back</li>
+          <li>Or switch on a draft that builds itself from wishes, following how many people each shift needs</li>
+          <li>Overview: everyone's shifts and hours for the week, their limit and their days</li>
+          <li>Swipe between days, with the days you work marked in blue</li>
           <li>A personal cap on shifts per week for each team member</li>
           <li>Drag people between shifts and days while editing</li>
           <li>Copy last week's schedule, then publish the week when it's ready</li>
@@ -102,11 +106,49 @@
           <li>Sign in with email or with Apple</li>
           <li>Profile pictures, light and dark mode</li>
           <li>In English, Slovenian and German</li>
+          <li>Free for teams of up to 5, with plans by team size for bigger teams</li>
         </ul>
       </div>
       <div class="content-block reveal">
         <h2>How it works</h2>
-        <p>The manager creates an organization, picks their line of work to fill in the shift times, and shares the join code. Staff sign up with the code, by email or with Apple, and land on the same schedule. Each week staff send their wishes before the deadline, and the manager drafts the schedule from them, adjusts it by hand and publishes it. When plans change, a cover or a shift trade goes to the manager for approval and the schedule updates for everyone.</p>
+        <p>The manager creates an organization, picks their line of work to fill in the shift times, chooses a plan, and shares the join code. Staff sign up with the code, by email or with Apple, and land on the same schedule. Each week staff send their wishes before the deadline, and the manager builds the schedule with each day's wishes right under it, adjusts it and publishes it. When plans change, a cover or a shift trade goes to the manager for approval and the schedule updates for everyone.</p>
+      </div>
+      <div class="content-block reveal" id="plans">
+        <h2>Plans</h2>
+        <p>Rotera is free for teams of up to 5. Bigger teams pick a plan by team size, monthly or yearly, and every paid plan starts with one month free. The manager subscribes once for the whole organization, and staff never pay.</p>
+        <div class="packages app-plans">
+          <article class="package">
+            <div class="package-top"><h3>Free</h3></div>
+            <p class="package-price">&euro;0</p>
+            <p class="package-best">Up to 5 members</p>
+            <p class="package-time">Free for good</p>
+          </article>
+          <article class="package">
+            <div class="package-top"><h3>Starter</h3></div>
+            <p class="package-price">&euro;9.99 <span class="price-from">/ month</span></p>
+            <p class="package-best">Up to 10 members</p>
+            <p class="package-time">or &euro;99.99 a year</p>
+          </article>
+          <article class="package">
+            <div class="package-top"><h3>Team</h3></div>
+            <p class="package-price">&euro;19.99 <span class="price-from">/ month</span></p>
+            <p class="package-best">Up to 20 members</p>
+            <p class="package-time">or &euro;199.99 a year</p>
+          </article>
+          <article class="package">
+            <div class="package-top"><h3>Business</h3></div>
+            <p class="package-price">&euro;39.99 <span class="price-from">/ month</span></p>
+            <p class="package-best">Up to 50 members</p>
+            <p class="package-time">or &euro;399.99 a year</p>
+          </article>
+          <article class="package">
+            <div class="package-top"><h3>Enterprise</h3></div>
+            <p class="package-price">&euro;69.99 <span class="price-from">/ month</span></p>
+            <p class="package-best">Up to 150 members</p>
+            <p class="package-time">or &euro;699.99 a year</p>
+          </article>
+        </div>
+        <p class="muted">Prices include VAT. A year costs the same as ten months. Plans are bought in the iPhone app as App Store subscriptions and apply to the whole team, on the web too. They renew automatically unless cancelled at least 24 hours before the period ends, and you manage them in your Apple Account settings. See the <a href="TermsOfUse">Terms of Use</a>.</p>
       </div>
       <div class="content-block reveal">
         <h2>Everywhere your team is</h2>
@@ -157,7 +199,7 @@
       </div>
       <div class="content-block reveal">
         <h2>Built with</h2>
-        <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Supabase</li></ul>
+        <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Supabase</li><li>RevenueCat</li></ul>
       </div>
     </section>
   </main>

@@ -2891,3 +2891,22 @@ button[aria-busy="true"] {
   filter: none;
   box-shadow: 0 0 0 1px rgba(17, 17, 19, 0.06), 0 40px 80px -30px rgba(233, 191, 0, 0.75);
 }
+
+/* An app's own plans (Rotera): five small cards that wrap on their own */
+.packages.app-plans {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin: 18px 0;
+}
+
+.app-plans .package {
+  padding: 22px;
+  gap: 6px;
+}
+
+.app-plans .package-price {
+  font-size: 1.55rem;
+}
+
+.app-plans .package-time {
+  margin-top: auto;
+}
