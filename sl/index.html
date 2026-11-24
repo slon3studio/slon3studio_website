@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://slon3studio.goatcounter.com; media-src 'self'; connect-src 'self' https://formspree.io https://itunes.apple.com https://slon3studio.goatcounter.com; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>slon3studio | Studio za aplikacije</title>
   <meta name="description" content="slon3studio izdeluje preproste, uporabne aplikacije za iPhone in Mac." />
   <link rel="canonical" href="https://slon3studio.si/sl/" />
@@ -18,31 +20,32 @@
   <meta property="og:locale" content="sl_SI" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#faf9f5" />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo-32.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=20" />
+  <link rel="stylesheet" href="../style.css?v=21" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://slon3studio.si/#org", "name": "slon3studio", "url": "https://slon3studio.si/", "logo": "https://slon3studio.si/assets/logo-512.png", "email": "slon3studio@gmail.com", "sameAs": ["https://github.com/slon3studio"], "description": "Independent app studio from Slovenia: apps for iPhone and Mac, and websites and apps for small businesses."}, {"@type": "WebSite", "@id": "https://slon3studio.si/#site", "url": "https://slon3studio.si/", "name": "slon3studio", "inLanguage": ["en", "sl"], "publisher": {"@id": "https://slon3studio.si/#org"}}]}</script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-content">
       <a class="brand" href="./">
-        <img src="../assets/logo-192.png" alt="" width="40" height="40" />
+        <img src="../assets/logo.svg" alt="" width="40" height="40" />
         slon3studio
       </a>
       <button class="nav-toggle" aria-label="Odpri meni" aria-expanded="false">&#9776;</button>
       <nav class="site-nav">
         <a href="./" aria-current="page">Domov</a>
-        <a href="pages/projects">Aplikacije</a>
-        <a href="pages/services">Storitve</a>
-        <a href="pages/news">Novice</a>
-        <a href="pages/about_us">O nas</a>
-        <a href="pages/contact">Kontakt</a>
-        <a class="nav-cta" href="pages/contact#work">Pridobi ponudbo</a>
-        <a class="lang-switch" href="../index.html" hreflang="en" lang="en" title="English" aria-label="English">EN</a>
+        <a href="apps/">Aplikacije</a>
+        <a href="services">Storitve</a>
+        <a href="news">Novice</a>
+        <a href="about">O nas</a>
+        <a href="contact">Kontakt</a>
+        <a class="nav-cta" href="contact#work">Pridobi ponudbo</a>
+        <a class="lang-switch" href="../" hreflang="en" lang="en" title="English" aria-label="English">EN</a>
       </nav>
     </div>
   </header>
@@ -50,17 +53,28 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Neodvisen studio za aplikacije</span>
+        <div class="hero-copy">
+          <a class="hero-kicker" href="news#mousecontroller-mac"><b>Novo</b> Mouse Controller za Mac je v Mac App Storu <span aria-hidden="true">&rarr;</span></a>
           <h1>Majhen studio.<br /><span class="accent">Velike ideje.</span></h1>
           <p class="lead">slon3studio izdeluje preproste, uporabne aplikacije za iPhone in Mac. Oglej si naše aplikacije ali pa naj eno naredimo zate.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="#apps">Naše aplikacije</a>
-            <a class="btn btn-ghost" href="pages/services">Storitve in cene</a>
+            <a class="btn btn-ghost" href="services">Storitve in cene</a>
+          </div>
+          <div class="hero-proof">
+            <span class="proof-icons" aria-hidden="true"><img src="../assets/RemoteMouseIcon-256.png" alt="" width="36" height="36" /><img src="../assets/PayDayIcon-256.png" alt="" width="36" height="36" /><img src="../assets/RoteraIcon-256.png" alt="" width="36" height="36" /><img src="../assets/TackaIcon-256.png" alt="" width="36" height="36" /><img src="../assets/SlippyIcon-256.png" alt="" width="36" height="36" /></span>
+            <span><strong>5 aplikacij</strong> že v App Storu</span>
           </div>
         </div>
         <div class="hero-art">
-          <img src="../assets/logo-mark.png" alt="Logotip slon3studio: odebeljena trojka in moder slon" width="600" height="477" fetchpriority="high" />
+          <div class="hero-stage">
+            <img class="hero-logo" src="../assets/logo-mark.svg" alt="Logotip slon3studio: odebeljena trojka in moder slon" width="600" height="474" fetchpriority="high" />
+          </div>
+          <img class="orbit o1" src="../assets/RemoteMouseIcon-256.png" alt="" width="84" height="84" />
+          <img class="orbit o2" src="../assets/PayDayIcon-256.png" alt="" width="84" height="84" />
+          <img class="orbit o3" src="../assets/RoteraIcon-256.png" alt="" width="84" height="84" />
+          <img class="orbit o4" src="../assets/TackaIcon-256.png" alt="" width="84" height="84" />
+          <img class="orbit o5" src="../assets/SlippyIcon-256.png" alt="" width="84" height="84" />
           <span class="tap-hint" aria-hidden="true">Tapni me!</span>
         </div>
       </div>
@@ -74,7 +88,7 @@
           <p>Vsako aplikacijo oblikujemo, izdelamo in podpiramo sami.</p>
         </div>
         <div class="app-grid">
-          <a class="app-card" href="pages/MouseController/" data-status="live" data-platform="iphone mac">
+          <a class="app-card" href="apps/MouseController/" data-status="live" data-platform="iphone mac">
             <span class="status-pill live">V App Storu</span>
             <div class="app-icon"><img src="../assets/RemoteMouseIcon-256.png" alt="Ikona aplikacije Mouse Controller" loading="lazy" width="72" height="72" /></div>
             <h3>Mouse Controller</h3>
@@ -82,7 +96,7 @@
             <ul class="tags"><li>iOS</li><li>macOS</li><li>SwiftUI</li></ul>
             <span class="card-link">Poglej aplikacijo &rarr;</span>
           </a>
-          <a class="app-card" href="pages/PayDay/" data-status="live" data-platform="iphone">
+          <a class="app-card" href="apps/PayDay/" data-status="live" data-platform="iphone">
             <span class="status-pill live">V App Storu</span>
             <div class="app-icon"><img src="../assets/PayDayIcon-256.png" alt="Ikona aplikacije PayDay" loading="lazy" width="72" height="72" /></div>
             <h3>PayDay</h3>
@@ -90,7 +104,7 @@
             <ul class="tags"><li>iOS</li><li>SwiftUI</li><li>iCloud</li></ul>
             <span class="card-link">Poglej aplikacijo &rarr;</span>
           </a>
-          <a class="app-card" href="pages/Tacka/" data-status="live" data-platform="iphone">
+          <a class="app-card" href="apps/Tacka/" data-status="live" data-platform="iphone">
             <span class="status-pill live">V App Storu</span>
             <div class="app-icon"><img src="../assets/TackaIcon-256.png" alt="Ikona aplikacije Tačka" loading="lazy" width="72" height="72" /></div>
             <h3>Tačka</h3>
@@ -98,7 +112,7 @@
             <ul class="tags"><li>iOS</li><li>SwiftUI</li><li>MapKit</li></ul>
             <span class="card-link">Poglej aplikacijo &rarr;</span>
           </a>
-          <a class="app-card" href="pages/Slippy/" data-status="live" data-platform="iphone">
+          <a class="app-card" href="apps/Slippy/" data-status="live" data-platform="iphone">
             <span class="status-pill live">V App Storu</span>
             <div class="app-icon"><img src="../assets/SlippyIcon-256.png" alt="Ikona aplikacije Slippy" loading="lazy" width="72" height="72" /></div>
             <h3>Slippy</h3>
@@ -106,7 +120,7 @@
             <ul class="tags"><li>iOS</li><li>SwiftUI</li><li>Vision</li></ul>
             <span class="card-link">Poglej aplikacijo &rarr;</span>
           </a>
-          <a class="app-card" href="pages/Rotera/" data-status="live" data-platform="iphone web">
+          <a class="app-card" href="apps/Rotera/" data-status="live" data-platform="iphone web">
             <span class="status-pill live">V App Storu</span>
             <div class="app-icon"><img src="../assets/RoteraIcon-256.png" alt="Ikona aplikacije Rotera" loading="lazy" width="72" height="72" /></div>
             <h3>Rotera</h3>
@@ -157,10 +171,10 @@
             <h2>Potrebuješ spletno stran ali aplikacijo?</h2>
             <p class="muted">Jasni paketi za mala podjetja, od enostranske strani do aplikacije po meri. Vsak projekt dobi pisno ponudbo s fiksno ceno.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="pages/contact#work">Pridobi ponudbo</a>
+              <a class="btn btn-primary" href="contact#work">Pridobi ponudbo</a>
             </div>
           </div>
-          <div class="band-plans"><a class="band-plan" href="pages/plans/landing"><strong>Predstavitvena stran</strong><span><span class="price-from">od</span> <span class="amount" data-price="290" data-promo="145">290 &euro;</span></span></a><a class="band-plan" href="pages/plans/website"><strong>Spletna stran za podjetje</strong><span><span class="price-from">od</span> <span class="amount" data-price="490" data-promo="245">490 &euro;</span></span></a><a class="band-plan" href="pages/plans/app"><strong>Mobilna aplikacija</strong><span><span class="price-from">od</span> <span class="amount" data-price="1490" data-promo="745">1.490 &euro;</span></span></a><a class="band-plan" href="pages/plans/custom"><strong>Aplikacija po meri</strong><span>Ponudba po meri</span></a></div>
+          <div class="band-plans"><a class="band-plan" href="plans/landing"><strong>Predstavitvena stran</strong><span><span class="price-from">od</span> <span class="amount" data-price="290" data-promo="145">290 &euro;</span></span></a><a class="band-plan" href="plans/website"><strong>Spletna stran za podjetje</strong><span><span class="price-from">od</span> <span class="amount" data-price="490" data-promo="245">490 &euro;</span></span></a><a class="band-plan" href="plans/app"><strong>Mobilna aplikacija</strong><span><span class="price-from">od</span> <span class="amount" data-price="1490" data-promo="745">1.490 &euro;</span></span></a><a class="band-plan" href="plans/custom"><strong>Aplikacija po meri</strong><span>Ponudba po meri</span></a></div>
         </div>
       </div>
     </section>
@@ -170,10 +184,10 @@
         <div class="section-head reveal">
           <span class="eyebrow">Novice</span>
           <h2>Sveže iz studia</h2>
-          <p><a href="pages/news">Vse novice &rarr;</a></p>
+          <p><a href="news">Vse novice &rarr;</a></p>
         </div>
         <div class="app-grid">
-          <a class="app-card news-card" href="pages/news#mousecontroller-mac">
+          <a class="app-card news-card" href="news#mousecontroller-mac">
             <div class="post-head">
               <img class="post-icon" src="../assets/RemoteMouseIcon-256.png" alt="" width="44" height="44" loading="lazy" />
               <div><span class="post-app">Mouse Controller</span><time datetime="2026-11-24">24. 11. 2026</time></div>
@@ -181,7 +195,7 @@
             <h3>Mouse Controller za Mac je v Mac App Storu</h3>
             <span class="card-link">Preberi več &rarr;</span>
           </a>
-          <a class="app-card news-card" href="pages/news#rotera-1-4">
+          <a class="app-card news-card" href="news#rotera-1-4">
             <div class="post-head">
               <img class="post-icon" src="../assets/RoteraIcon-256.png" alt="" width="44" height="44" loading="lazy" />
               <div><span class="post-app">Rotera</span><time datetime="2026-11-24">24. 11. 2026</time></div>
@@ -189,7 +203,7 @@
             <h3>Rotera 1.4: brezplačno za majhne ekipe, paketi za večje</h3>
             <span class="card-link">Preberi več &rarr;</span>
           </a>
-          <a class="app-card news-card" href="pages/news#rotera-1-3">
+          <a class="app-card news-card" href="news#rotera-1-3">
             <div class="post-head">
               <img class="post-icon" src="../assets/RoteraIcon-256.png" alt="" width="44" height="44" loading="lazy" />
               <div><span class="post-app">Rotera</span><time datetime="2026-11-13">13. 11. 2026</time></div>
@@ -227,16 +241,16 @@
     <div class="container footer-content">
       <span>&copy; <span id="year">2026</span> slon3studio</span>
       <div class="footer-links">
-        <a href="pages/projects">Aplikacije</a>
-        <a href="pages/services">Storitve</a>
-        <a href="pages/news">Novice</a>
+        <a href="apps/">Aplikacije</a>
+        <a href="services">Storitve</a>
+        <a href="news">Novice</a>
         <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a>
         <a href="https://github.com/slon3studio">GitHub</a>
       </div>
     </div>
   </footer>
 
-  <script src="../script.js?v=18"></script>
-  <script data-goatcounter="https://slon3studio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script src="../script.js?v=19"></script>
+  <script data-goatcounter="https://slon3studio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

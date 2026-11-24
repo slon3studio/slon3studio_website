@@ -269,39 +269,36 @@ document.querySelectorAll("form.newsletter-form").forEach((form) => {
   });
 });
 
-// App Store rating: the page ships with the last known numbers, then refreshes them from Apple
-document.querySelectorAll(".rating-summary[data-app-id]").forEach((box, i) => {
-  const cb = `slonRating${i}`;
-  const script = document.createElement("script");
-  const done = () => {
-    delete window[cb];
-    script.remove();
-  };
-  window[cb] = (data) => {
+// App Store rating: the page ships with the last known numbers, then refreshes them from Apple.
+// Apple's lookup API allows cross-origin requests, so this is a plain fetch (no third-party script).
+document.querySelectorAll(".rating-summary[data-app-id]").forEach(async (box) => {
+  try {
+    const res = await fetch(`https://itunes.apple.com/lookup?id=${encodeURIComponent(box.dataset.appId)}&country=si`, {
+      credentials: "omit",
+      referrerPolicy: "no-referrer",
+    });
+    if (!res.ok) return;
+    const data = await res.json();
     const r = data && data.results && data.results[0];
-    if (r && r.userRatingCount > 0) {
-      const avg = Math.round(r.averageUserRating * 10) / 10;
-      const n = r.userRatingCount;
-      const score = avg.toFixed(1);
-      box.querySelector(".rating-score").textContent = LANG === "sl" ? score.replace(".", ",") : score;
-      const stars = box.querySelector(".stars");
-      stars.style.setProperty("--rating", avg);
-      stars.setAttribute("aria-label", LANG === "sl" ? `${score.replace(".", ",")} od 5 zvezdic` : `${score} out of 5 stars`);
-      let word;
-      if (LANG === "sl") {
-        const m = n % 100;
-        word = m === 1 ? "ocena" : m === 2 ? "oceni" : m === 3 || m === 4 ? "ocene" : "ocen";
-        box.querySelector(".rating-count").textContent = `${n} ${word} v App Storu`;
-      } else {
-        box.querySelector(".rating-count").textContent = `${n} rating${n === 1 ? "" : "s"} on the App Store`;
-      }
-      box.classList.remove("is-empty");
+    if (!r || !(r.userRatingCount > 0)) return;
+    const avg = Math.round(r.averageUserRating * 10) / 10;
+    const n = r.userRatingCount;
+    const score = avg.toFixed(1);
+    box.querySelector(".rating-score").textContent = LANG === "sl" ? score.replace(".", ",") : score;
+    const stars = box.querySelector(".stars");
+    stars.style.setProperty("--rating", avg);
+    stars.setAttribute("aria-label", LANG === "sl" ? `${score.replace(".", ",")} od 5 zvezdic` : `${score} out of 5 stars`);
+    if (LANG === "sl") {
+      const m = n % 100;
+      const word = m === 1 ? "ocena" : m === 2 ? "oceni" : m === 3 || m === 4 ? "ocene" : "ocen";
+      box.querySelector(".rating-count").textContent = `${n} ${word} v App Storu`;
+    } else {
+      box.querySelector(".rating-count").textContent = `${n} rating${n === 1 ? "" : "s"} on the App Store`;
     }
-    done();
-  };
-  script.src = `https://itunes.apple.com/lookup?id=${encodeURIComponent(box.dataset.appId)}&country=si&callback=${cb}`;
-  script.onerror = done;
-  document.head.appendChild(script);
+    box.classList.remove("is-empty");
+  } catch {
+    // Offline or blocked: keep the numbers the page shipped with.
+  }
 });
 
 // Screenshot galleries: arrow buttons on hover (desktop), swipe on phones, tap a shot to open it large
@@ -576,3 +573,53 @@ if (heroArt) {
     }
   });
 }
+
+// Mouse Controller: the iPhone app shares its page with ?download. On a Mac, open the companion
+// app in the Mac App Store. iPads also say "Macintosh" but have touch points.
+(() => {
+  const isMac = /Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints === 0;
+  const link = document.querySelector(".app-actions a.store-badge-mac");
+  if (!new URLSearchParams(location.search).has("download") || !isMac || !link) return;
+
+  // Drop ?download from the address so a reload doesn't open the store again.
+  history.replaceState(null, "", location.pathname + location.hash);
+
+  const t = LANG === "sl" ? {
+    title: "Odpiram Mac App Store",
+    retry: "Se ni odprl?",
+    again: "Odpri znova",
+    steps: ["Klikni <b>Get</b> in brezplačno namesti MouseController", "Odpri ga v mapi Applications ali v Launchpadu", "Dovoli Dostopnost, ko vpraša"],
+    close: "Zapri",
+  } : {
+    title: "Opening the Mac App Store",
+    retry: "Didn't open?",
+    again: "Open it again",
+    steps: ["Click <b>Get</b> to install MouseController, free", "Open it from Applications or Launchpad", "Allow Accessibility when asked"],
+    close: "Close",
+  };
+
+  const card = document.createElement("div");
+  card.className = "download-card";
+  card.setAttribute("role", "status");
+  card.innerHTML =
+    '<span class="download-card-icon" aria-hidden="true">' +
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>' +
+    "</span><div><strong></strong><p></p><ol>" +
+    t.steps.map((s) => `<li>${s}</li>`).join("") +
+    '</ol></div><button class="download-card-close" type="button"></button>';
+  card.querySelector("strong").textContent = t.title;
+  const p = card.querySelector("p");
+  const again = document.createElement("a");
+  again.href = link.href;
+  again.textContent = t.again;
+  p.append(`${t.retry} `, again);
+  const close = card.querySelector("button");
+  close.setAttribute("aria-label", t.close);
+  close.textContent = "×";
+  close.addEventListener("click", () => card.remove());
+  link.parentNode.insertAdjacentElement("afterend", card);
+
+  setTimeout(() => {
+    location.href = link.href;
+  }, 500);
+})();

@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://slon3studio.goatcounter.com; media-src 'self'; connect-src 'self' https://formspree.io https://itunes.apple.com https://slon3studio.goatcounter.com; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Page not found | slon3studio</title>
   <meta name="description" content="This page doesn&#x27;t exist." />
   <meta name="robots" content="noindex" />
@@ -15,29 +17,30 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#faf9f5" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo-32.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=20" />
+  <link rel="stylesheet" href="/style.css?v=21" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-content">
       <a class="brand" href="/">
-        <img src="/assets/logo-192.png" alt="" width="40" height="40" />
+        <img src="/assets/logo.svg" alt="" width="40" height="40" />
         slon3studio
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
       <nav class="site-nav">
         <a href="/">Home</a>
-        <a href="/pages/projects">Apps</a>
-        <a href="/pages/services">Services</a>
-        <a href="/pages/news">News</a>
-        <a href="/pages/about_us">About</a>
-        <a href="/pages/contact">Contact</a>
-        <a class="nav-cta" href="/pages/contact#work">Get a quote</a>
+        <a href="/apps/">Apps</a>
+        <a href="/services">Services</a>
+        <a href="/news">News</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a class="nav-cta" href="/contact#work">Get a quote</a>
         <a class="lang-switch" href="/sl/" hreflang="sl" lang="sl" title="Slovenščina" aria-label="Slovenščina">SL</a>
       </nav>
     </div>
@@ -50,10 +53,10 @@
         <h1>This page wandered off</h1>
         <p>The link may be old or mistyped. Try one of these instead.</p>
         <p lang="sl" class="muted">Te strani ni. Povezava je morda stara ali napačno vpisana.</p>
-        <div class="btn-row" style="margin-top: 24px">
+        <div class="btn-row mt-24">
           <a class="btn btn-primary" href="/">Home</a>
-          <a class="btn btn-ghost" href="/pages/projects">Apps</a>
-          <a class="btn btn-ghost" href="/pages/services">Services</a>
+          <a class="btn btn-ghost" href="/apps/">Apps</a>
+          <a class="btn btn-ghost" href="/services">Services</a>
           <a class="btn btn-ghost" href="/sl/">Slovenščina</a>
         </div>
       </div>
@@ -64,16 +67,16 @@
     <div class="container footer-content">
       <span>&copy; <span id="year">2026</span> slon3studio</span>
       <div class="footer-links">
-        <a href="/pages/projects">Apps</a>
-        <a href="/pages/services">Services</a>
-        <a href="/pages/news">News</a>
+        <a href="/apps/">Apps</a>
+        <a href="/services">Services</a>
+        <a href="/news">News</a>
         <a href="mailto:slon3studio@gmail.com">slon3studio@gmail.com</a>
         <a href="https://github.com/slon3studio">GitHub</a>
       </div>
     </div>
   </footer>
 
-  <script src="/script.js?v=18"></script>
-  <script data-goatcounter="https://slon3studio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script src="/script.js?v=19"></script>
+  <script data-goatcounter="https://slon3studio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>
