@@ -18,9 +18,12 @@ const LANG = document.documentElement.lang === "sl" ? "sl" : "en";
 const PROMO = {
   active: true,
   percent: 50,
+  until: "2026-12-31", // last day of the offer; after it the normal prices show again by themselves
 };
 
-if (PROMO.active) {
+const promoOn = PROMO.active && (!PROMO.until || new Date() <= new Date(`${PROMO.until}T23:59:59`));
+
+if (promoOn) {
   const group = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, LANG === "sl" ? "." : ",");
   const fmt = (n) => (LANG === "sl" ? `${group(n)} €` : `€${group(n)}`);
   const cut = (n) => Math.round((n * (100 - PROMO.percent)) / 100);
@@ -46,7 +49,13 @@ if (PROMO.active) {
   if (hero) {
     const note = document.createElement("p");
     note.className = "promo-note";
-    note.textContent = LANG === "sl" ? `Akcija: ${PROMO.percent} % popusta na izdelavo spletnih strani in aplikacij.` : `Special offer: ${PROMO.percent}% off every website and app build.`;
+    note.textContent = (() => {
+      const [y, m, d] = (PROMO.until || "").split("-").map(Number);
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const monthsSl = ["januarja", "februarja", "marca", "aprila", "maja", "junija", "julija", "avgusta", "septembra", "oktobra", "novembra", "decembra"];
+      if (LANG === "sl") return `Akcija: ${PROMO.percent} % popusta na izdelavo spletnih strani in aplikacij${y ? ` do ${d}. ${monthsSl[m - 1]} ${y}` : ""}.`;
+      return `Special offer: ${PROMO.percent}% off every website and app build${y ? ` until ${d} ${months[m - 1]} ${y}` : ""}.`;
+    })();
     hero.appendChild(note);
   }
 }
