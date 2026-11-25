@@ -59,6 +59,9 @@ if (promoOn) {
     hero.appendChild(note);
   }
 }
+// Home: the promo pill above the headline shows only while the offer runs
+if (promoOn) document.querySelectorAll(".promo-kicker").forEach((el) => (el.hidden = false));
+
 const T = {
   en: {
     noteSend: "Your request comes straight to our inbox. We'll reply by email.",

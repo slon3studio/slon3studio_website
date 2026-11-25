@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://slon3studio.si/"><b>Obišči spletno stran</b></a>
   &nbsp;·&nbsp;
-  <a href="https://slon3studio.si/apps/">Aplikacije</a>
+  <a href="https://slon3studio.si/projects/">Aplikacije</a>
   &nbsp;·&nbsp;
   <a href="https://slon3studio.si/contact#work">Pridobi ponudbo</a>
 </p>
@@ -26,7 +26,7 @@ To je uradna spletna stran studia slon3studio. Na njej:
 - predstavimo studio in vse naše aplikacije,
 - ima vsaka aplikacija svojo stran s pregledom, podporo (Support) in politiko
   zasebnosti (Privacy Policy),
-- ima vsaka aplikacija svojo zgodbo »Kako je nastala« (`/apps/<App>/story`), ocene in mnenja iz App Stora ter video, kjer ga imamo,
+- ima vsaka aplikacija svojo zgodbo »Kako je nastala« (`/projects/<App>/story`), ocene in mnenja iz App Stora ter video, kjer ga imamo,
 - so na strani [Novice](https://slon3studio.si/news) kratke objave za vsako izdano posodobitev,
 - lahko stranke prek obrazca »Get a quote« (z izbiro paketa iz »Storitev«) pošljejo povpraševanje za ponudbo, obiskovalci pa se prijavijo na e-novice.
 
@@ -52,7 +52,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RemoteMouseIcon-256.png" alt="Mouse Controller" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/apps/MouseController/">Mouse Controller</a></b> · <a href="https://apps.apple.com/si/app/mousecontroller/id6766896246">App Store</a> · <a href="https://apps.apple.com/si/app/mousecontroller/id6781235744?mt=12">Mac App Store</a><br />
+      <b><a href="https://slon3studio.si/projects/MouseController/">Mouse Controller</a></b> · <a href="https://apps.apple.com/si/app/mousecontroller/id6766896246">App Store</a> · <a href="https://apps.apple.com/si/app/mousecontroller/id6781235744?mt=12">Mac App Store</a><br />
       iPhone spremeni v brezžično sledilno ploščico in tipkovnico za Mac.<br />
       <sub>iOS · macOS · SwiftUI</sub>
     </td>
@@ -62,7 +62,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/PayDayIcon-256.png" alt="PayDay" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/apps/PayDay/">PayDay</a></b> · <a href="https://apps.apple.com/app/id6819828248">App Store</a><br />
+      <b><a href="https://slon3studio.si/projects/PayDay/">PayDay</a></b> · <a href="https://apps.apple.com/app/id6819828248">App Store</a><br />
       Beleži izmene, napitnine in plačo pri več službah ter pokaže, koliko bo izplačilo ta mesec.<br />
       <sub>iOS · SwiftUI · iCloud</sub>
     </td>
@@ -72,7 +72,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/RoteraIcon-256.png" alt="Rotera" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/apps/Rotera/">Rotera</a></b> · <a href="https://apps.apple.com/app/id6821974105">App Store</a><br />
+      <b><a href="https://slon3studio.si/projects/Rotera/">Rotera</a></b> · <a href="https://apps.apple.com/app/id6821974105">App Store</a><br />
       Urnik izmen za vsako ekipo: vodja sestavi teden, zaposleni pošljejo želje, menjave in zamenjave izmen pa gredo vodji v potrditev. Aplikacija za iPhone, za Android pa <a href="https://rotera.slon3studio.si">spletna aplikacija</a>.<br />
       <sub>iOS · spletna aplikacija</sub>
     </td>
@@ -82,7 +82,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/SlippyIcon-256.png" alt="Slippy" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/apps/Slippy/">Slippy</a></b> · <a href="https://apps.apple.com/app/id6821976978">App Store</a><br />
+      <b><a href="https://slon3studio.si/projects/Slippy/">Slippy</a></b> · <a href="https://apps.apple.com/app/id6821976978">App Store</a><br />
       Kalkulator za natakarje in blagajnike: s kamero prebere znesek na kartičnih slipih in jih ob koncu izmene sešteje.<br />
       <sub>iOS · SwiftUI · Vision</sub>
     </td>
@@ -92,7 +92,7 @@ Aplikacije izdelujemo tudi po naročilu, za posameznike in manjša podjetja.
       <img src="assets/TackaIcon-256.png" alt="Tačka" width="72" height="72" />
     </td>
     <td>
-      <b><a href="https://slon3studio.si/apps/Tacka/">Tačka</a></b> · <a href="https://apps.apple.com/app/id6823619182">App Store</a><br />
+      <b><a href="https://slon3studio.si/projects/Tacka/">Tačka</a></b> · <a href="https://apps.apple.com/app/id6823619182">App Store</a><br />
       Poišči zaupanja vrednega sprehajalca psov ali varuha v bližini in spremljaj vsak sprehod v živo na zemljevidu.<br />
       <sub>iOS · SwiftUI · MapKit</sub>
     </td>
@@ -105,7 +105,7 @@ Nove aplikacije so že v delu.
 
 - **Spletna stran:** <https://slon3studio.si/>
 - **Lokalno:** v mapi zaženi `python3 -m http.server` in odpri <http://localhost:8000>. Povezave Home kažejo na mapo (`./`), zato jih strežnik odpre kot `index.html`. Povezave so brez `.html` (npr. `/services`), GitHub Pages pa jih sam poveže z datoteko. Pri lokalnem ogledu `script.js` končnico `.html` doda nazaj.
-- **Naslovi:** aplikacije so na `/apps/`, vsaka aplikacija na `/apps/<App>/` (podpora `/apps/<App>/SupportPage`, zasebnost `/apps/<App>/PrivacyPolicy`), ostale strani pa naravnost pod korenom (`/services`, `/news`, `/about`, `/contact`, `/plans/<paket>`). Stari naslovi pod `/pages/...` (tudi tisti v App Storu) so preusmeritvene strani (`assets/redirect.js`) in morajo ostati v repozitoriju.
+- **Naslovi:** aplikacije so na `/projects/` (projekti), vsaka aplikacija na `/projects/<App>/` (podpora `/projects/<App>/SupportPage`, zasebnost `/projects/<App>/PrivacyPolicy`), ostale strani pa naravnost pod korenom (`/services`, `/news`, `/about`, `/contact`, `/plans/<paket>`). Stari naslovi pod `/pages/...` in `/apps/...` (tudi tisti v App Storu) so preusmeritvene strani (`assets/redirect.js`) in morajo ostati v repozitoriju.
 
 ## Urejanje
 
