@@ -4099,3 +4099,38 @@ a.app-card,
 .section-head p {
   font-size: 1.08rem;
 }
+
+/* Care plan strip: dark like the featured Business website card */
+.care-plan {
+  background: var(--ink) !important;
+  background-image: radial-gradient(60% 140% at 100% 0%, rgba(253, 211, 3, 0.16), transparent 65%) !important;
+  border: 1px solid var(--ink) !important;
+  color: #fff;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.care-plan h3 {
+  color: #fff;
+}
+
+.care-plan .package-price,
+.care-plan .amount-fixed {
+  color: var(--yellow);
+}
+
+.care-plan .price-from,
+.care-plan p,
+.care-plan .muted {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.care-plan .btn-ghost {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+
+.care-plan .btn-ghost:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
