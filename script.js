@@ -506,76 +506,32 @@ document.querySelectorAll(".pick-chip").forEach((chip) => {
   });
 });
 
-// The elephant says hello. Tap it a few times for a surprise.
-const heroArt = document.querySelector(".hero-art");
-
-if (heroArt) {
-  const lines = LANG === "sl" ? [
-    "Tuuut!",
-    "Živjo! Jaz sem Slon.",
-    "Slon je po angleško elephant.",
-    "Imaš idejo za aplikacijo?",
-    "Nobene funkcije ne pozabim.",
-    "Narejeno s SwiftUI in arašidi.",
-    "Kar daj naprej ...",
-  ] : [
-    "Toot toot!",
-    "Hi! I'm Slon.",
-    "Slon means elephant in Slovenian.",
-    "Got an app idea?",
-    "I never forget a feature.",
-    "Built with SwiftUI and peanuts.",
-    "Keep going...",
-  ];
-  let taps = 0;
-  heroArt.tabIndex = 0;
-  heroArt.setAttribute("role", "button");
-  heroArt.setAttribute("aria-label", LANG === "sl" ? "Pozdravi slona slon3studio" : "Say hi to the slon3studio elephant");
-  const hint = heroArt.querySelector(".tap-hint");
-  if (hint && window.matchMedia("(hover: hover)").matches) hint.textContent = LANG === "sl" ? "Klikni me!" : "Click me!";
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const peanutRain = () => {
-    if (reduceMotion) return;
-    for (let i = 0; i < 28; i++) {
-      const p = document.createElement("span");
-      p.className = "peanut";
-      p.textContent = "🥜";
-      p.style.left = `${Math.random() * 100}vw`;
-      p.style.animationDuration = `${1.8 + Math.random() * 1.6}s`;
-      p.style.animationDelay = `${Math.random() * 0.6}s`;
-      document.body.appendChild(p);
-      p.addEventListener("animationend", () => p.remove());
-    }
+// The logo: hover (or tap) and the elephant lifts its head and trumpets
+document.querySelectorAll("[data-toot]").forEach((stage) => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let busy = false;
+  const toot = () => {
+    if (busy) return;
+    busy = true;
+    stage.classList.add("toot");
+    setTimeout(() => {
+      stage.classList.remove("toot");
+      busy = false;
+    }, 1900);
   };
-
-  const boop = () => {
-    taps++;
-    heroArt.classList.add("tapped");
-    heroArt.classList.remove("boop");
-    void heroArt.offsetWidth;
-    heroArt.classList.add("boop");
-
-    heroArt.querySelector(".elephant-bubble")?.remove();
-    const bubble = document.createElement("span");
-    bubble.className = "elephant-bubble";
-    bubble.setAttribute("role", "status");
-    bubble.textContent = taps % 8 === 0 ? (LANG === "sl" ? "Arašidova zabava!" : "Peanut party!") : lines[(taps - 1) % lines.length];
-    heroArt.appendChild(bubble);
-    bubble.addEventListener("animationend", () => bubble.remove());
-
-    if (taps % 8 === 0) peanutRain();
-  };
-
-  heroArt.addEventListener("click", boop);
-  heroArt.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      boop();
-    }
-  });
-}
+  stage.addEventListener("pointerenter", toot);
+  stage.addEventListener("click", toot);
+  // Phones have no hover: play it once when the logo comes into view
+  if (!window.matchMedia("(hover: hover)").matches && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        setTimeout(toot, 600);
+        io.disconnect();
+      }
+    }, { threshold: 0.6 });
+    io.observe(stage);
+  }
+});
 
 // Mouse Controller: the iPhone app shares its page with ?download. On a Mac, open the companion
 // app in the Mac App Store. iPads also say "Macintosh" but have touch points.
@@ -626,3 +582,31 @@ if (heroArt) {
     location.href = link.href;
   }, 500);
 })();
+
+
+// Home: "Find your package" — three questions, the matching package shows on the right
+document.querySelectorAll(".finder").forEach((finder) => {
+  const state = { need: "site", site: "website", app: "app", care: "no" };
+  const group = (q) => finder.querySelector(`.fq[data-q="${q}"]`);
+  const render = () => {
+    group("site").hidden = state.need !== "site";
+    group("app").hidden = state.need !== "app";
+    group("care").hidden = state.need === "unsure";
+    const pick = state.need === "site" ? state.site : state.need === "app" ? state.app : "unsure";
+    finder.querySelectorAll("[data-result]").forEach((card) => {
+      card.hidden = card.dataset.result !== pick;
+      const care = card.querySelector(".fr-care");
+      if (care) care.hidden = state.care !== "yes" || pick === "unsure";
+    });
+  };
+  finder.querySelectorAll(".fq").forEach((fq) => {
+    fq.querySelectorAll(".fq-opt").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state[fq.dataset.q] = btn.dataset.value;
+        fq.querySelectorAll(".fq-opt").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        render();
+      });
+    });
+  });
+  render();
+});
