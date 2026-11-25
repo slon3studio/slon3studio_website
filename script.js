@@ -506,7 +506,7 @@ document.querySelectorAll(".pick-chip").forEach((chip) => {
   });
 });
 
-// The logo: hover (or tap) and the elephant lifts its head and trumpets
+// The logo: hover (or tap) and the elephant raises its trunk (original, forward, up and back), ears flaring
 document.querySelectorAll("[data-toot]").forEach((stage) => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   let busy = false;
@@ -514,10 +514,12 @@ document.querySelectorAll("[data-toot]").forEach((stage) => {
     if (busy) return;
     busy = true;
     stage.classList.add("toot");
+    const trunk = stage.querySelector(".el-trunk animate");
+    if (trunk && trunk.beginElement) trunk.beginElement();
     setTimeout(() => {
       stage.classList.remove("toot");
       busy = false;
-    }, 1900);
+    }, 2700);
   };
   stage.addEventListener("pointerenter", toot);
   stage.addEventListener("click", toot);
