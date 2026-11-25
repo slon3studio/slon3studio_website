@@ -503,77 +503,13 @@ main {
   overflow: visible;
 }
 
-.logo-anim .el,
-.logo-anim .el-ear,
-.logo-anim .el-eye {
-  transform-box: view-box;
-}
-
-/* The head tosses back a little while the trunk swings up (the trunk itself morphs via SMIL) */
-.logo-anim .el {
-  transform-origin: 165px 40px;
-}
-
-.logo-anim .el-ear {
-  transform-origin: 205px 25px;
-}
-
-.logo-anim .el-eye {
-  transform-origin: 276px 104px;
-}
-
-.toot .el {
-  animation: el-toss 2.6s ease-in-out;
-}
-
-.toot .el-ear {
-  animation: el-ear 2.6s ease-in-out;
-}
-
-.toot .el-eye {
-  animation: el-eye 2.6s ease;
-}
-
-@keyframes el-toss {
-  0% { transform: none; }
-  7% { transform: rotate(0.8deg); }
-  26% { transform: rotate(-3.5deg) translateY(-1px); }
-  40% { transform: rotate(-6.5deg) translateY(-3px); }
-  50% { transform: rotate(-7deg) translateY(-4px); }
-  58% { transform: rotate(-6.3deg) translateY(-3.5px); }
-  70% { transform: rotate(-6.7deg) translateY(-4px); }
-  86% { transform: rotate(-2.5deg) translateY(-1px); }
-  100% { transform: none; }
-}
-
-/* Ears spread out while the head is up, with a small flutter, then fold back */
-@keyframes el-ear {
-  0% { transform: none; }
-  30% { transform: rotate(2.5deg) scaleX(1.04); }
-  48% { transform: rotate(5deg) scaleX(1.08); }
-  56% { transform: rotate(3.5deg) scaleX(1.05); }
-  63% { transform: rotate(5deg) scaleX(1.08); }
-  72% { transform: rotate(4.5deg) scaleX(1.07); }
-  90% { transform: rotate(0.5deg); }
-  100% { transform: none; }
-}
-
-/* The eye opens a touch wider as the head comes up */
-@keyframes el-eye {
-  0%, 100% { transform: none; }
-  45%, 72% { transform: rotate(-4deg) scaleY(1.12); }
-}
-
 @keyframes logo-in {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-stage,
-  .toot .el,
-  .toot .el-ear,
-  .toot .el-eye {
+  .logo-stage {
     animation: none;
   }
 }
@@ -3835,6 +3771,6 @@ h3 {
 
 /* Room for the raised trunk on the right */
 .hero .logo-stage {
-  width: min(440px, 86%);
-  margin-right: 10%;
+  width: min(420px, 80%);
+  margin-right: 18%;
 }
