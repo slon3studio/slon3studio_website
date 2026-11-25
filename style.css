@@ -3920,3 +3920,182 @@ h3 {
   font-size: 1.45rem;
   line-height: 1.2;
 }
+
+/* =====================================================================
+   Clean & premium pass 2 (25 Nov 2026)
+   ===================================================================== */
+
+/* Navigation: the page you are on is a solid black pill; the quote button is the brand yellow */
+.site-nav a {
+  font-weight: 550;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+}
+
+.site-nav a[aria-current="page"]:hover {
+  background: #000;
+  color: #fff;
+}
+
+.site-nav a.nav-cta {
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.site-nav a.nav-cta:hover {
+  background: var(--ink);
+  color: var(--yellow);
+}
+
+/* Trust strip under the home hero: big numbers, hairline dividers */
+.trust {
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat {
+  display: grid;
+  gap: 6px;
+  padding: 34px 28px;
+  border-left: 1px solid var(--hair);
+}
+
+.stat:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.stat-num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-num small {
+  margin-left: 4px;
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--blue);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 860px) {
+  .trust-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .stat:nth-child(n + 3) {
+    border-top: 1px solid var(--hair);
+  }
+
+  .stat {
+    padding: 24px 18px;
+  }
+}
+
+/* Cleaner lists: rows separated by hairlines instead of a box around every line */
+.feature-grid {
+  gap: 0 40px !important;
+}
+
+.feature-grid li,
+.feature-grid li.inherits {
+  padding: 16px 0 16px 24px;
+  background: none;
+  border: 0 !important;
+  border-bottom: 1px solid var(--hair) !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  font-weight: 500;
+}
+
+.feature-grid li::before {
+  left: 2px;
+  top: 24px;
+}
+
+.feature-grid li.inherits {
+  font-weight: 650;
+}
+
+.why-list {
+  gap: 0;
+}
+
+.why-list li {
+  padding: 20px 0;
+  background: none;
+  border: 0 !important;
+  border-top: 1px solid var(--hair) !important;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+.steps {
+  gap: 0;
+}
+
+.steps li {
+  padding: 20px 0 20px 52px;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--hair);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.steps li::before {
+  left: 0;
+  top: 22px;
+  color: var(--blue);
+}
+
+/* Cards: a soft light follows the pointer */
+.package,
+.proj,
+a.app-card,
+.post {
+  --mx: 50%;
+  --my: 0%;
+  background-image: radial-gradient(420px circle at var(--mx) var(--my), rgba(2, 147, 244, 0.07), transparent 45%);
+}
+
+.package.is-featured {
+  background-image: radial-gradient(420px circle at var(--mx) var(--my), rgba(253, 211, 3, 0.14), transparent 45%);
+}
+
+/* More air between sections and a calmer section intro */
+.section-head {
+  max-width: 720px;
+  margin-bottom: 44px;
+}
+
+.section-head p {
+  font-size: 1.08rem;
+}

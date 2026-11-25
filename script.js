@@ -584,3 +584,51 @@ document.querySelectorAll(".finder").forEach((finder) => {
   });
   render();
 });
+
+// Numbers in the trust strip count up once when they come into view
+(() => {
+  const els = document.querySelectorAll("[data-count]");
+  if (!els.length) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const run = (el) => {
+    const target = parseFloat(el.dataset.count);
+    const decimals = (el.dataset.count.split(".")[1] || "").length;
+    const fmt = (v) => {
+      const s = v.toFixed(decimals);
+      return LANG === "sl" ? s.replace(".", ",") : s;
+    };
+    if (reduce) return;
+    const start = performance.now();
+    const dur = 1100;
+    const step = (now) => {
+      const k = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(target * e);
+      if (k < 1) requestAnimationFrame(step);
+    };
+    el.textContent = fmt(0);
+    requestAnimationFrame(step);
+  };
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        run(en.target);
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  els.forEach((el) => io.observe(el));
+})();
+
+// Cards: a soft light follows the pointer
+(() => {
+  if (!window.matchMedia("(hover: hover)").matches) return;
+  document.querySelectorAll(".package, .proj, a.app-card, .post").forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      card.style.setProperty("--my", `${e.clientY - r.top}px`);
+    });
+  });
+})();
