@@ -491,8 +491,6 @@ main {
 .logo-stage {
   justify-self: center;
   width: min(500px, 100%);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
   animation: logo-in 1.1s var(--ease) both;
 }
 
